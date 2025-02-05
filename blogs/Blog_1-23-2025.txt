@@ -1,7 +1,9 @@
 So, this is going to be my first entry. This is my personal website, and while it’s mainly just a blog, I’d like to use it to post most of the things I’ve been working on or plan to work on. I also want to share things that interest me at the time I’m writing. With that in mind, I thought I’d list some of the things I’m currently focused on.
 
-At the moment, I’m obviously building out this website—my personal website—which is going to take some time. I want to get it looking at least semi-acceptable.
+At the moment, I’m obviously building out this website—my personal website which is going to take some time. I want to get it looking acceptable.
 
-As for my current interests, AI is a big one. I’m learning to use the new diffusion models (Deepseek models). Additionally, I’ve been diving into 3D printing. I recently got a Bambu Lab A1 with AMS, and I’ve been printing a lot of cool things with it.
+As for my current interests, AI is a big one. I’m testing and using new models (Deepseek models at the time of writing this). Additionally, I’ve been diving into 3D printing. I recently got a Bambu Lab A1 with AMS, and I’ve been printing a lot of cool things with it.
 
-I also have around six books that I plan on reading, which I’ll list below.
+
+Created: 1/23/2025 3:25PM
+Edited On: 2/5/2025 5:45PM
