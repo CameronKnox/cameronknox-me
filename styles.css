@@ -1,10 +1,41 @@
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 20px;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
-iframe {
-  font-family: Arial, sans-serif;
+h1 {
+  color: #333;
+}
+
+p {
+  color: #555;
+}
+
+/* Iframe container */
+.iframe-container {
   display: flex;
-  margin: 0px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* Responsive iframe styling */
+.responsive-iframe {
+  width: 100%; /* Full width on smaller screens */
+  max-width: 600px; /* Maximum width for larger screens */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #fff; /* White background */
+  height: auto; /* Height will be adjusted dynamically */
+}
+
+/* Mobile-friendly adjustments */
+@media (max-width: 768px) {
+  .responsive-iframe {
+    border-radius: 6px; /* Slightly smaller border radius */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+  }
 }

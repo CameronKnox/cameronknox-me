@@ -3,6 +3,8 @@
   <head>
     <title>What am I Doing</title>
     <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures mobile responsiveness -->
   </head>
   <body>
     <h1>I'm Cameron</h1>
@@ -10,13 +12,11 @@
       Welcome to my website, this is where I showcase things I am interested in
       and working on.
     </p>
-    <iframe src="./blogs/Blog_1-23-2025.txt" width="33%" height="300px">
-      Your browser does not support iframes.
-    </iframe>
+
+    <iframe id="blog1" class="responsive-iframe"></iframe>
     <br />
-    <iframe src="./blogs/current-setups.txt" width="33%" height="400px">
-      Your browser does not support iframes.
-    </iframe>
+    <iframe id="blog2" class="responsive-iframe"></iframe>
+
     <script src="script.js"></script>
   </body>
 </html>
