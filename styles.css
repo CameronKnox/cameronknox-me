@@ -14,28 +14,56 @@ p {
   color: #555;
 }
 
-/* Iframe container */
-.iframe-container {
+/* Blog container */
+#blog-container {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
-/* Responsive iframe styling */
-.responsive-iframe {
-  width: 100%; /* Full width on smaller screens */
-  max-width: 600px; /* Maximum width for larger screens */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  background-color: #fff; /* White background */
-  height: auto; /* Height will be adjusted dynamically */
+/* Blog card styling */
+.blog-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
 }
 
-/* Mobile-friendly adjustments */
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.blog-title {
+  color: #333;
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.blog-content {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Error message styling */
+.error {
+  color: #d9534f;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
-  .responsive-iframe {
-    border-radius: 6px; /* Slightly smaller border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+  .blog-card {
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+  }
+  
+  .blog-title {
+    font-size: 1.3rem;
   }
 }
