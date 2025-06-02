@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>What am I Doing</title>
     <link rel="stylesheet" href="styles.css" />
@@ -7,17 +7,21 @@
     <!-- Ensures mobile responsiveness -->
   </head>
   <body>
-    <h1>I'm Cameron</h1>
-    <p>
-      Welcome to my website, this is where I showcase things I am interested in
-      and working on.
-    </p>
+    <!-- Main content wrapper to center everything -->
+    <div class="content-wrapper">
+      <h1>I'm Cameron</h1>
+      <p>
+        Welcome to my website, this is where I showcase things I am interested
+        in and working on.
+      </p>
 
-    <iframe id="blog1" class="responsive-iframe"></iframe>
-    <br />
-    <iframe id="blog2" class="responsive-iframe"></iframe>
-    <br />
-    <iframe id="blog3" class="responsive-iframe"></iframe>
+      <!-- Container for all your iframes -->
+      <section class="iframes-section">
+        <iframe id="blog1" class="responsive-iframe"></iframe>
+        <iframe id="blog2" class="responsive-iframe"></iframe>
+        <iframe id="blog3" class="responsive-iframe"></iframe>
+      </section>
+    </div>
 
     <script src="script.js"></script>
   </body>

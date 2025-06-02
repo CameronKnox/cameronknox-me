@@ -1,41 +1,114 @@
 /* General styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0; /* Light grey background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally on the page */
+  min-height: 100vh;
+  color: #333; /* Darker text color */
+  box-sizing: border-box; /* Include padding in element's total width/height */
+}
+
+/* Content wrapper to manage overall page content */
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items within the wrapper */
+  width: 100%; /* Take full width of its parent */
+  max-width: 900px; /* Limit overall content width */
+  padding: 2rem 1rem; /* Vertical padding, and some horizontal padding for smaller screens */
+  box-sizing: border-box;
 }
 
 h1 {
-  color: #333;
+  color: #222; /* Even darker for headings */
+  font-size: 2.5rem; /* Larger, responsive heading */
+  margin-bottom: 1rem;
+  text-align: center; /* Center heading text */
+  width: 100%; /* Ensure heading respects max-width of parent */
 }
 
 p {
   color: #555;
+  font-size: 1.1rem; /* Slightly larger paragraph text */
+  line-height: 1.6;
+  max-width: 700px; /* Limit paragraph width for readability */
+  text-align: center; /* Center paragraph text */
+  margin-bottom: 2rem; /* More space before the iframes */
+  padding: 0 1rem; /* Add some horizontal padding */
 }
 
-/* Iframe container */
-.iframe-container {
+/* Container for all iframes */
+.iframes-section {
   display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  flex-direction: column; /* Stack iframes vertically */
+  align-items: center; /* Center iframes horizontally */
+  width: 100%; /* Take full width of its parent */
+  padding: 0; /* No padding on the container itself, iframes will have margins */
 }
 
-/* Responsive iframe styling */
+/* Individual iframe styling */
 .responsive-iframe {
-  width: 100%; /* Full width on smaller screens */
-  max-width: 600px; /* Maximum width for larger screens */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  background-color: #fff; /* White background */
-  height: auto; /* Height will be adjusted dynamically */
+  width: 100%; /* Take full width of its parent (.iframes-section) */
+  max-width: 750px; /* Maximum width for individual iframes */
+  height: 400px; /* Fixed height for the iframe, adjust as needed */
+  border: none; /* No default border */
+  border-radius: 12px; /* More pronounced rounded corners */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
+  background-color: #fff; /* White background for the iframe itself */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  margin-bottom: 2.5rem; /* Space between iframes */
+  /* Remove the last iframe's margin-bottom to avoid extra space at the end */
+}
+
+.responsive-iframe:last-child {
+  margin-bottom: 0;
+}
+
+.responsive-iframe:hover {
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+  transform: translateY(-2px); /* Subtle lift effect on hover */
 }
 
 /* Mobile-friendly adjustments */
 @media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Smaller heading on mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Smaller paragraph on mobile */
+    padding: 0 1rem; /* Add horizontal padding to paragraphs */
+  }
+
   .responsive-iframe {
-    border-radius: 6px; /* Slightly smaller border radius */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for mobile */
+    height: 300px; /* Adjust iframe height for mobile */
+    border-radius: 8px; /* Slightly smaller border radius for mobile */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Lighter shadow for mobile */
+    margin-bottom: 2rem; /* Slightly less space between iframes on mobile */
+  }
+
+  .content-wrapper {
+    padding: 1.5rem 0.5rem; /* Reduce overall padding on mobile */
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .responsive-iframe {
+    height: 220px; /* Even smaller iframe height for very small screens */
+    margin-bottom: 1.5rem;
   }
 }
