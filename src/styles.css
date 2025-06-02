@@ -13,6 +13,12 @@ body {
   box-sizing: border-box; /* Include padding in element's total width/height */
 }
 
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 /* Content wrapper to manage overall page content */
 .content-wrapper {
   display: flex;
@@ -38,31 +44,32 @@ p {
   line-height: 1.6;
   max-width: 700px; /* Limit paragraph width for readability */
   text-align: center; /* Center paragraph text */
-  margin-bottom: 2rem; /* More space before the iframes */
+  margin-bottom: 2rem; /* More space before the blog sections */
   padding: 0 1rem; /* Add some horizontal padding */
 }
 
-/* Container for all iframes */
+/* Container for all blog sections */
 .iframes-section {
   display: flex;
-  flex-direction: column; /* Stack iframes vertically */
-  align-items: center; /* Center iframes horizontally */
+  flex-direction: column; /* Stack blog sections vertically */
+  align-items: center; /* Center blog sections horizontally */
   width: 100%; /* Take full width of its parent */
-  padding: 0; /* No padding on the container itself, iframes will have margins */
+  padding: 0; /* No padding on the container itself, blog sections will have margins */
 }
 
-/* Individual iframe styling */
+/* Individual blog section styling (replaces iframe styling) */
 .responsive-iframe {
   width: 100%; /* Take full width of its parent (.iframes-section) */
-  max-width: 750px; /* Maximum width for individual iframes */
-  height: 400px; /* Fixed height for the iframe, adjust as needed */
+  max-width: 750px; /* Maximum width for individual blog sections */
+  height: 400px; /* Fixed height for the blog section, adjust as needed */
   border: none; /* No default border */
   border-radius: 12px; /* More pronounced rounded corners */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer, larger shadow */
-  background-color: #fff; /* White background for the iframe itself */
+  background-color: #fff; /* White background for the blog section itself */
   transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
-  margin-bottom: 2.5rem; /* Space between iframes */
-  /* Remove the last iframe's margin-bottom to avoid extra space at the end */
+  margin-bottom: 2.5rem; /* Space between blog sections */
+  overflow: hidden; /* Ensure content doesn't spill out of rounded corners */
+  position: relative;
 }
 
 .responsive-iframe:last-child {
@@ -86,10 +93,10 @@ p {
   }
 
   .responsive-iframe {
-    height: 300px; /* Adjust iframe height for mobile */
+    height: 300px; /* Adjust blog section height for mobile */
     border-radius: 8px; /* Slightly smaller border radius for mobile */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Lighter shadow for mobile */
-    margin-bottom: 2rem; /* Slightly less space between iframes on mobile */
+    margin-bottom: 2rem; /* Slightly less space between blog sections on mobile */
   }
 
   .content-wrapper {
@@ -108,7 +115,7 @@ p {
   }
 
   .responsive-iframe {
-    height: 220px; /* Even smaller iframe height for very small screens */
+    height: 220px; /* Even smaller blog section height for very small screens */
     margin-bottom: 1.5rem;
   }
 }
