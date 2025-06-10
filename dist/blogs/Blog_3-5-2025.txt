@@ -1,4 +1,0 @@
-What have I been doing. This month I have been doing CSES challenges at https://cses.fi/problemset/. C++ is one of the languages that I have used in the past to build console applications but I am finding mysely getting more interested in it again while doing these problems. Another thing that I also would like to start doing is using my Rasberry PI 4 Model B 2gb. I bought it a whhile back and want to setup a server of some kind to either stream media or monitor my devices.
-
-Created: 3/5/2025 8:27PM
-Edited On: 
