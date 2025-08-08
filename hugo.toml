@@ -8,6 +8,8 @@ pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+buildFuture = true
+
 [[params.social]]
 name = "GitHub"
 icon = "github"

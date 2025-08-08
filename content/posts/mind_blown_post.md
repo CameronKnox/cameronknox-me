@@ -1,7 +1,7 @@
 ---
 title: "My mind is blown wide open"
-date: 2025-08-08T14:30:00-05:00
-lastmod: 2025-08-08T14:30:00-05:00
+date: 2025-08-08T09:30:00-05:00
+lastmod: 2025-08-08T09:30:00-05:00
 description: "Building a new LMS with React and Vite instead of Outsystems, and how Claude Code helped me overcome imposter syndrome and rapidly prototype a working version."
 tags: ["work", "React", "Claude", "LMS", "development"]
 categories: ["blog"]
