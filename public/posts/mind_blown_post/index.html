@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My mind is blown wide open | Camerons Blog</title>
@@ -9,7 +9,34 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    
+    
     <link rel="stylesheet" href="/css/main.css">
+    
+    
+    
+    
+    
+    <script>
+        (function() {
+            const THEME_KEY = 'theme-preference';
+            const getThemePreference = () => {
+                if (localStorage.getItem(THEME_KEY)) {
+                    return localStorage.getItem(THEME_KEY);
+                } else {
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+            };
+            const theme = getThemePreference();
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    
+    
+    <script src="/js/theme-toggle.js"></script>
     
     
     <meta name="description" content="Building a new LMS with React and Vite instead of Outsystems, and how Claude Code helped me overcome imposter syndrome and rapidly prototype a working version.">
@@ -20,20 +47,42 @@
 <body>
     <div class="container">
         <header>
-            <a href="/" class="site-title">Camerons Blog</a>
-            <nav>
-                <ul>
-                    
-                    <li><a href="/">Home</a></li>
-                    
-                    <li><a href="/posts">All posts</a></li>
-                    
-                    <li><a href="/about">About</a></li>
-                    
-                    <li><a href="/tags">Tags</a></li>
-                    
-                </ul>
-            </nav>
+            <div class="header-content">
+                <a href="/" class="site-title">Camerons Blog</a>
+                <div class="header-right">
+                    <nav>
+                        <ul>
+                            
+                            <li><a href="/">Home</a></li>
+                            
+                            <li><a href="/posts">All posts</a></li>
+                            
+                            <li><a href="/about">About</a></li>
+                            
+                            <li><a href="/tags">Tags</a></li>
+                            
+                        </ul>
+                    </nav>
+                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                        
+                        <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                        </svg>
+                        
+                        <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </header>
         
         
@@ -56,11 +105,37 @@
         </header>
         
         <div class="post-content">
-            <p>I’ve been tasked with building a new Learning Management System for my company. While we currently use Outsystems for deployment and development since we have another internal app running on it, I’ve found it frustrating to work with. Compilation is slow, the codebase is difficult to manage, and extending or customizing content is cumbersome.</p>
-<p>So I decided to take a different approach for this project and build it with React.js and Vite. At first, I wasn’t confident I could deliver something the team would actually want. I struggled with imposter syndrome and genuinely thought I might fail.</p>
-<p>That changed when I discovered Claude Code.</p>
-<p>It completely transformed my development experience. Claude Code integrates seamlessly into my terminal and improved every part of my workflow. I’ve tried tools like Cursor and GitHub Copilot, but this is on another level. For just $20, I had a prototype deployed on Vercel in two weeks, which is an incredible value.</p>
-<p>Yes, there are some limitations like message caps within a certain time period, but they haven’t been a major issue. I’m more excited than ever about the future of this project and can’t wait to demo what I’ve built.</p>
+            <p>Recently, I was tasked with building a new <strong>Learning Management System (LMS)</strong> for my company, and the experience has completely changed my perspective on what&rsquo;s possible with modern development tools.</p>
+<h2 id="the-challenge">The Challenge</h2>
+<p>Our company currently uses <strong>OutSystems</strong> for most of our applications since we already have another internal app running on that platform. While OutSystems has its place, I&rsquo;ve found it increasingly frustrating to work with for this particular project:</p>
+<ul>
+<li><strong>Slow compilation times</strong> that interrupt the development flow</li>
+<li><strong>Difficult codebase management</strong> when trying to track changes</li>
+<li><strong>Limited customization options</strong> for the specific features we needed</li>
+<li><strong>Cumbersome content extension</strong> processes</li>
+</ul>
+<h2 id="taking-a-different-path">Taking a Different Path</h2>
+<p>Instead of forcing this project into the OutSystems mold, I decided to take a risk and build it with <strong>React.js and Vite</strong>. This wasn&rsquo;t an easy decision—I was stepping outside our established workflow and betting on technologies that weren&rsquo;t part of our standard stack.</p>
+<h3 id="fighting-imposter-syndrome">Fighting Imposter Syndrome</h3>
+<p>At first, I wasn&rsquo;t confident I could deliver something the team would actually want. The familiar voice of <strong>imposter syndrome</strong> kept whispering that I might fail, that I was in over my head, and that I should just stick with the established tools.</p>
+<p>But sometimes taking risks is exactly what you need to grow.</p>
+<h2 id="enter-claude-code">Enter Claude Code</h2>
+<p>Everything changed when I discovered <strong>Claude Code</strong>. This tool didn&rsquo;t just help me write code—it completely transformed my entire development experience.</p>
+<h3 id="what-made-the-difference">What Made the Difference</h3>
+<p>Unlike other AI coding assistants I&rsquo;ve tried (including Cursor and GitHub Copilot), Claude Code integrates seamlessly into my terminal and enhances every aspect of my workflow:</p>
+<ul>
+<li><strong>Contextual understanding</strong> of my entire project structure</li>
+<li><strong>Intelligent problem-solving</strong> that goes beyond simple code completion</li>
+<li><strong>Real-time debugging assistance</strong> when I hit roadblocks</li>
+<li><strong>Architecture guidance</strong> for building scalable components</li>
+</ul>
+<h3 id="results-that-speak-for-themselves">Results That Speak for Themselves</h3>
+<p>For just <strong>$20</strong>, I managed to build and deploy a working prototype on <strong>Vercel</strong> in just <strong>two weeks</strong>. The value proposition is incredible when you consider what I accomplished in that timeframe.</p>
+<h2 id="the-reality-check">The Reality Check</h2>
+<p>I won&rsquo;t pretend it&rsquo;s perfect—there are <strong>message caps</strong> and some limitations within certain time periods. But honestly? These haven&rsquo;t been major roadblocks in my development process.</p>
+<h2 id="looking-forward">Looking Forward</h2>
+<p>I&rsquo;m more excited than ever about the future of this project. What started as a daunting challenge has become one of the most rewarding development experiences I&rsquo;ve had. I can&rsquo;t wait to demo what I&rsquo;ve built and show the team what&rsquo;s possible when you combine modern tools with the right mindset.</p>
+<p>Sometimes the best way to overcome imposter syndrome isn&rsquo;t to ignore it—it&rsquo;s to build something that proves it wrong.</p>
 
         </div>
         
@@ -69,11 +144,11 @@
             
             <a href="/tags/work" class="tag">work</a>
             
-            <a href="/tags/react" class="tag">React</a>
+            <a href="/tags/react" class="tag">react</a>
             
-            <a href="/tags/claude" class="tag">Claude</a>
+            <a href="/tags/claude" class="tag">claude</a>
             
-            <a href="/tags/lms" class="tag">LMS</a>
+            <a href="/tags/lms" class="tag">lms</a>
             
             <a href="/tags/development" class="tag">development</a>
             
@@ -84,7 +159,16 @@
 
         
         <footer>
-            <p>© CameronKnox</p>
+            <div class="footer-content">
+                <p>© CameronKnox</p>
+                <div class="social-links">
+                    <a href="https://github.com/CameronKnox" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="View my GitHub profile">
+                        <svg class="social-icon github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" fill="currentColor"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </footer>
     </div>
 </body>

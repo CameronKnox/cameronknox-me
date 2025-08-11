@@ -2,144 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Camerons Blog</title>
-    <link>https://cameronknox.io/tags/</link>
+    <link>http://localhost:64084/tags/</link>
     <description>Recent content in Tags on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
     <lastBuildDate>Fri, 08 Aug 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="https://cameronknox.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:64084/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Claude</title>
-      <link>https://cameronknox.io/tags/claude/</link>
+      <link>http://localhost:64084/tags/claude/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/claude/</guid>
+      <guid>http://localhost:64084/tags/claude/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>https://cameronknox.io/tags/development/</link>
+      <link>http://localhost:64084/tags/development/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/development/</guid>
+      <guid>http://localhost:64084/tags/development/</guid>
       <description></description>
     </item>
     <item>
-      <title>LMS</title>
-      <link>https://cameronknox.io/tags/lms/</link>
+      <title>Lms</title>
+      <link>http://localhost:64084/tags/lms/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/lms/</guid>
+      <guid>http://localhost:64084/tags/lms/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>https://cameronknox.io/tags/react/</link>
+      <link>http://localhost:64084/tags/react/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/react/</guid>
+      <guid>http://localhost:64084/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Work</title>
-      <link>https://cameronknox.io/tags/work/</link>
+      <link>http://localhost:64084/tags/work/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/work/</guid>
+      <guid>http://localhost:64084/tags/work/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://cameronknox.io/tags/c&#43;&#43;/</link>
+      <link>http://localhost:64084/tags/c&#43;&#43;/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/c&#43;&#43;/</guid>
+      <guid>http://localhost:64084/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
-      <title>CSES</title>
-      <link>https://cameronknox.io/tags/cses/</link>
+      <title>Cses</title>
+      <link>http://localhost:64084/tags/cses/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/cses/</guid>
+      <guid>http://localhost:64084/tags/cses/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>https://cameronknox.io/tags/programming/</link>
+      <link>http://localhost:64084/tags/programming/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/programming/</guid>
+      <guid>http://localhost:64084/tags/programming/</guid>
       <description></description>
     </item>
     <item>
-      <title>Raspberry Pi</title>
-      <link>https://cameronknox.io/tags/raspberry-pi/</link>
+      <title>Raspberry-Pi</title>
+      <link>http://localhost:64084/tags/raspberry-pi/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/raspberry-pi/</guid>
+      <guid>http://localhost:64084/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>https://cameronknox.io/tags/server/</link>
+      <link>http://localhost:64084/tags/server/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/server/</guid>
+      <guid>http://localhost:64084/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Apple</title>
-      <link>https://cameronknox.io/tags/apple/</link>
+      <link>http://localhost:64084/tags/apple/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/apple/</guid>
+      <guid>http://localhost:64084/tags/apple/</guid>
       <description></description>
     </item>
     <item>
       <title>Peripherals</title>
-      <link>https://cameronknox.io/tags/peripherals/</link>
+      <link>http://localhost:64084/tags/peripherals/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/peripherals/</guid>
+      <guid>http://localhost:64084/tags/peripherals/</guid>
       <description></description>
     </item>
     <item>
       <title>Setup</title>
-      <link>https://cameronknox.io/tags/setup/</link>
+      <link>http://localhost:64084/tags/setup/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/setup/</guid>
+      <guid>http://localhost:64084/tags/setup/</guid>
       <description></description>
     </item>
     <item>
       <title>Streaming</title>
-      <link>https://cameronknox.io/tags/streaming/</link>
+      <link>http://localhost:64084/tags/streaming/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/streaming/</guid>
+      <guid>http://localhost:64084/tags/streaming/</guid>
       <description></description>
     </item>
     <item>
       <title>Tech</title>
-      <link>https://cameronknox.io/tags/tech/</link>
+      <link>http://localhost:64084/tags/tech/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/tech/</guid>
+      <guid>http://localhost:64084/tags/tech/</guid>
       <description></description>
     </item>
     <item>
-      <title>3D Printing</title>
-      <link>https://cameronknox.io/tags/3d-printing/</link>
+      <title>3d-Printing</title>
+      <link>http://localhost:64084/tags/3d-printing/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/3d-printing/</guid>
+      <guid>http://localhost:64084/tags/3d-printing/</guid>
       <description></description>
     </item>
     <item>
-      <title>AI</title>
-      <link>https://cameronknox.io/tags/ai/</link>
+      <title>Ai</title>
+      <link>http://localhost:64084/tags/ai/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/ai/</guid>
+      <guid>http://localhost:64084/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal</title>
-      <link>https://cameronknox.io/tags/personal/</link>
+      <link>http://localhost:64084/tags/personal/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/personal/</guid>
+      <guid>http://localhost:64084/tags/personal/</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>https://cameronknox.io/tags/website/</link>
+      <link>http://localhost:64084/tags/website/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>https://cameronknox.io/tags/website/</guid>
+      <guid>http://localhost:64084/tags/website/</guid>
       <description></description>
     </item>
   </channel>

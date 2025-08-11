@@ -2,97 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://cameronknox.io/about/</loc>
+    <loc>http://localhost:64084/about/</loc>
     <lastmod>2025-08-11T16:20:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/</loc>
+    <loc>http://localhost:64084/</loc>
     <lastmod>2025-08-11T16:20:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/categories/blog/</loc>
+    <loc>http://localhost:64084/categories/blog/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/categories/</loc>
+    <loc>http://localhost:64084/categories/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/claude/</loc>
+    <loc>http://localhost:64084/tags/claude/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/development/</loc>
+    <loc>http://localhost:64084/tags/development/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/lms/</loc>
+    <loc>http://localhost:64084/tags/lms/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/posts/mind_blown_post/</loc>
+    <loc>http://localhost:64084/posts/mind_blown_post/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/posts/</loc>
+    <loc>http://localhost:64084/posts/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/react/</loc>
+    <loc>http://localhost:64084/tags/react/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/</loc>
+    <loc>http://localhost:64084/tags/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/work/</loc>
+    <loc>http://localhost:64084/tags/work/</loc>
     <lastmod>2025-08-08T09:30:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/c&#43;&#43;/</loc>
+    <loc>http://localhost:64084/tags/c&#43;&#43;/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/categories/coding/</loc>
+    <loc>http://localhost:64084/categories/coding/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/cses/</loc>
+    <loc>http://localhost:64084/tags/cses/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/posts/march_update_post/</loc>
+    <loc>http://localhost:64084/posts/march_update_post/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/programming/</loc>
+    <loc>http://localhost:64084/tags/programming/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/raspberry-pi/</loc>
+    <loc>http://localhost:64084/tags/raspberry-pi/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/server/</loc>
+    <loc>http://localhost:64084/tags/server/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/apple/</loc>
+    <loc>http://localhost:64084/tags/apple/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/posts/current_setups_post/</loc>
+    <loc>http://localhost:64084/posts/current_setups_post/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/peripherals/</loc>
+    <loc>http://localhost:64084/tags/peripherals/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/setup/</loc>
+    <loc>http://localhost:64084/tags/setup/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/streaming/</loc>
+    <loc>http://localhost:64084/tags/streaming/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/tech/</loc>
+    <loc>http://localhost:64084/tags/tech/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/categories/tech-setup/</loc>
+    <loc>http://localhost:64084/categories/tech-setup/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/3d-printing/</loc>
+    <loc>http://localhost:64084/tags/3d-printing/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/ai/</loc>
+    <loc>http://localhost:64084/tags/ai/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/posts/first_blog_post/</loc>
+    <loc>http://localhost:64084/posts/first_blog_post/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/personal/</loc>
+    <loc>http://localhost:64084/tags/personal/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>https://cameronknox.io/tags/website/</loc>
+    <loc>http://localhost:64084/tags/website/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url>
 </urlset>
