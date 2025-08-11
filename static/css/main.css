@@ -1,3 +1,8 @@
+/* Prevent theme flash - set initial light theme */
+:root {
+    color-scheme: light;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;

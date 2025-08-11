@@ -23,16 +23,37 @@
     
     <script>
         (function() {
-            const THEME_KEY = 'theme-preference';
-            const getThemePreference = () => {
-                if (localStorage.getItem(THEME_KEY)) {
-                    return localStorage.getItem(THEME_KEY);
-                } else {
-                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            try {
+                const THEME_KEY = 'theme-preference';
+                let theme;
+                
+                
+                try {
+                    theme = localStorage.getItem(THEME_KEY);
+                } catch (e) {
+                    
+                    theme = null;
                 }
-            };
-            const theme = getThemePreference();
-            document.documentElement.setAttribute('data-theme', theme);
+                
+                
+                if (!theme) {
+                    try {
+                        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    } catch (e) {
+                        theme = 'light'; 
+                    }
+                }
+                
+                
+                if (theme) {
+                    document.documentElement.setAttribute('data-theme', theme);
+                    document.documentElement.style.setProperty('color-scheme', theme);
+                }
+            } catch (e) {
+                
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.style.setProperty('color-scheme', 'light');
+            }
         })();
     </script>
     

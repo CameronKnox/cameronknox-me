@@ -33,16 +33,37 @@
     <!-- Inline theme initialization to prevent FOUC -->
     <script>
         (function() {
-            const THEME_KEY = 'theme-preference';
-            const getThemePreference = () => {
-                if (localStorage.getItem(THEME_KEY)) {
-                    return localStorage.getItem(THEME_KEY);
-                } else {
-                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            try {
+                const THEME_KEY = 'theme-preference';
+                let theme;
+                
+                // Try to get stored preference first
+                try {
+                    theme = localStorage.getItem(THEME_KEY);
+                } catch (e) {
+                    // localStorage might not be available
+                    theme = null;
                 }
-            };
-            const theme = getThemePreference();
-            document.documentElement.setAttribute('data-theme', theme);
+                
+                // If no stored theme, check system preference
+                if (!theme) {
+                    try {
+                        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                    } catch (e) {
+                        theme = 'light'; // fallback
+                    }
+                }
+                
+                // Apply theme immediately to prevent flash
+                if (theme) {
+                    document.documentElement.setAttribute('data-theme', theme);
+                    document.documentElement.style.setProperty('color-scheme', theme);
+                }
+            } catch (e) {
+                // Fallback to light theme if anything fails
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.documentElement.style.setProperty('color-scheme', 'light');
+            }
         })();
     </script>
     

@@ -1,47 +1,76 @@
-// Global clock interval variable
+// Global clock variables
 let clockInterval = null;
-let lastSecond = -1;
+let clockElements = null;
+let lastUpdate = 0;
 
-// Analog Clock Animation
+// Cache clock elements for better performance
+function getCacheClockElements() {
+    if (!clockElements) {
+        clockElements = {
+            hour: document.getElementById('hour-hand'),
+            minute: document.getElementById('minute-hand'),
+            second: document.getElementById('second-hand')
+        };
+    }
+    return clockElements;
+}
+
+// Optimized clock animation using requestAnimationFrame
 function updateClock() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    const milliseconds = now.getMilliseconds();
+    const now = performance.now();
     
-    // Calculate smooth angles for each hand
+    // Throttle updates to avoid excessive rendering
+    if (now - lastUpdate < 50) { // Max 20fps
+        return;
+    }
+    lastUpdate = now;
+    
+    const time = new Date();
+    const hours = time.getHours();
+    const minutes = time.getMinutes();
+    const seconds = time.getSeconds();
+    const milliseconds = time.getMilliseconds();
+    
+    // Calculate smooth angles
     const smoothSeconds = seconds + (milliseconds / 1000);
     const secondAngle = (smoothSeconds * 6) - 90;
     const minuteAngle = (minutes * 6 + smoothSeconds * 0.1) - 90;
     const hourAngle = ((hours % 12) * 30 + minutes * 0.5) - 90;
     
-    // Get the clock hands
-    const hourHand = document.getElementById('hour-hand');
-    const minuteHand = document.getElementById('minute-hand');
-    const secondHand = document.getElementById('second-hand');
+    // Get cached elements
+    const elements = getCacheClockElements();
     
-    if (hourHand && minuteHand && secondHand) {
-        // Only update if elements exist
-        hourHand.style.transform = `rotate(${hourAngle}deg)`;
-        minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
-        secondHand.style.transform = `rotate(${secondAngle}deg)`;
+    if (elements.hour && elements.minute && elements.second) {
+        // Use transform3d for hardware acceleration
+        elements.hour.style.transform = `rotate(${hourAngle}deg)`;
+        elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
+        elements.second.style.transform = `rotate(${secondAngle}deg)`;
     }
-    
-    lastSecond = seconds;
+}
+
+// Use requestAnimationFrame for smooth animation
+function animateClock() {
+    updateClock();
+    if (clockInterval) {
+        requestAnimationFrame(animateClock);
+    }
 }
 
 function initializeClock() {
-    // Clear any existing interval to prevent multiple intervals
+    // Clear any existing interval
     if (clockInterval) {
-        clearInterval(clockInterval);
+        clockInterval = false;
     }
     
-    // Set initial time immediately
+    // Reset cached elements in case of page navigation
+    clockElements = null;
+    
+    // Set initial time
     updateClock();
     
-    // Start new interval - update more frequently for smoother animation
-    clockInterval = setInterval(updateClock, 100);
+    // Start animation loop
+    clockInterval = true;
+    requestAnimationFrame(animateClock);
 }
 
 // Initialize clock when DOM is loaded
@@ -54,10 +83,16 @@ document.addEventListener('visibilitychange', function() {
     }
 });
 
-// Handle page unload to clean up interval
+// Handle page unload to clean up
 window.addEventListener('beforeunload', function() {
-    if (clockInterval) {
-        clearInterval(clockInterval);
-        clockInterval = null;
+    clockInterval = false;
+});
+
+// Handle page visibility changes for better performance
+document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+        clockInterval = false;
+    } else {
+        initializeClock();
     }
 });
