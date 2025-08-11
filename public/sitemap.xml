@@ -2,76 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/categories/blog/</loc>
+    <loc>https://cameronknox.io/about/</loc>
+    <lastmod>2025-08-11T16:20:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/</loc>
+    <lastmod>2025-08-11T16:20:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/categories/blog/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/categories/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/claude/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/development/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/lms/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/posts/mind_blown_post/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/posts/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/react/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/work/</loc>
+    <lastmod>2025-08-08T09:30:00-05:00</lastmod>
+  </url><url>
+    <loc>https://cameronknox.io/tags/c&#43;&#43;/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/c&#43;&#43;/</loc>
+    <loc>https://cameronknox.io/categories/coding/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://cameronknox.io/tags/cses/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://cameronknox.io/posts/march_update_post/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/coding/</loc>
+    <loc>https://cameronknox.io/tags/programming/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/cses/</loc>
+    <loc>https://cameronknox.io/tags/raspberry-pi/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/march_update_post/</loc>
+    <loc>https://cameronknox.io/tags/server/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://cameronknox.io/tags/apple/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/programming/</loc>
+    <loc>https://cameronknox.io/posts/current_setups_post/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/raspberry-pi/</loc>
+    <loc>https://cameronknox.io/tags/peripherals/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/server/</loc>
+    <loc>https://cameronknox.io/tags/setup/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://cameronknox.io/tags/streaming/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/apple/</loc>
+    <loc>https://cameronknox.io/tags/tech/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/current_setups_post/</loc>
+    <loc>https://cameronknox.io/categories/tech-setup/</loc>
     <lastmod>2025-03-05T20:27:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/peripherals/</loc>
-    <lastmod>2025-03-05T20:27:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/setup/</loc>
-    <lastmod>2025-03-05T20:27:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/streaming/</loc>
-    <lastmod>2025-03-05T20:27:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/tech/</loc>
-    <lastmod>2025-03-05T20:27:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/tech-setup/</loc>
-    <lastmod>2025-03-05T20:27:00-05:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/3d-printing/</loc>
+    <loc>https://cameronknox.io/tags/3d-printing/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ai/</loc>
+    <loc>https://cameronknox.io/tags/ai/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/first_blog_post/</loc>
+    <loc>https://cameronknox.io/posts/first_blog_post/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/personal/</loc>
+    <loc>https://cameronknox.io/tags/personal/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/website/</loc>
+    <loc>https://cameronknox.io/tags/website/</loc>
     <lastmod>2025-02-05T17:45:00-05:00</lastmod>
   </url>
 </urlset>

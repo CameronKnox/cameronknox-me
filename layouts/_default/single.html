@@ -1,0 +1,33 @@
+{{ define "main" }}
+<main>
+    <article>
+        <header>
+            <h1>{{ .Title }}</h1>
+            <div class="post-meta">
+                {{ .Date.Format "January 2, 2006" }}
+                {{ if .Lastmod }}
+                • Updated {{ .Lastmod.Format "January 2, 2006" }}
+                {{ end }}
+                {{ if .Params.categories }}
+                • {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}<a href="/categories/{{ $category | urlize }}">{{ $category }}</a>{{ end }}
+                {{ end }}
+            </div>
+            {{ if .Description }}
+            <p class="post-description"><em>{{ .Description }}</em></p>
+            {{ end }}
+        </header>
+        
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+        
+        {{ if .Params.tags }}
+        <div class="tags">
+            {{ range .Params.tags }}
+            <a href="/tags/{{ . | urlize }}" class="tag">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+    </article>
+</main>
+{{ end }}

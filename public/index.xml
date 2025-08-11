@@ -2,32 +2,46 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Camerons Blog</title>
-    <link>http://localhost:1313/</link>
+    <link>https://cameronknox.io/</link>
     <description>Recent content on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
-    <lastBuildDate>Wed, 05 Mar 2025 20:27:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 16:20:00 -0500</lastBuildDate>
+    <atom:link href="https://cameronknox.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://cameronknox.io/about/</link>
+      <pubDate>Mon, 11 Aug 2025 16:20:00 -0500</pubDate>
+      <guid>https://cameronknox.io/about/</guid>
+      <description>&lt;h1 id=&#34;about-me&#34;&gt;About Me&lt;/h1&gt;&#xA;&lt;p&gt;Hey there! I&amp;rsquo;m Cameron Knox, a developer and tech enthusiast who loves exploring new technologies and sharing what I learn along the way.&lt;/p&gt;&#xA;&lt;h2 id=&#34;what-i-do&#34;&gt;What I Do&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;m passionate about building things with code and constantly learning new technologies. Currently, I&amp;rsquo;m working on various projects including:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Web Development&lt;/strong&gt;: Building modern web applications with React and other frameworks&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Programming Challenges&lt;/strong&gt;: Solving problems on platforms like &lt;a href=&#34;https://cses.fi/problemset/&#34;&gt;CSES&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hardware Projects&lt;/strong&gt;: Experimenting with my Raspberry Pi 4 for server projects and automation&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;current-interests&#34;&gt;Current Interests&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;AI &amp;amp; Machine Learning&lt;/strong&gt;: Testing new models and exploring AI-powered development tools&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;3D Printing&lt;/strong&gt;: Creating useful items with my Bambu Lab A1 printer&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;System Administration&lt;/strong&gt;: Setting up media servers and device monitoring&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Open Source&lt;/strong&gt;: Contributing to projects and sharing code&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;tech-stack&#34;&gt;Tech Stack&lt;/h2&gt;&#xA;&lt;p&gt;Some of the technologies I work with:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My mind is blown wide open</title>
+      <link>https://cameronknox.io/posts/mind_blown_post/</link>
+      <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
+      <guid>https://cameronknox.io/posts/mind_blown_post/</guid>
+      <description>&lt;p&gt;I’ve been tasked with building a new Learning Management System for my company. While we currently use Outsystems for deployment and development since we have another internal app running on it, I’ve found it frustrating to work with. Compilation is slow, the codebase is difficult to manage, and extending or customizing content is cumbersome.&lt;/p&gt;&#xA;&lt;p&gt;So I decided to take a different approach for this project and build it with React.js and Vite. At first, I wasn’t confident I could deliver something the team would actually want. I struggled with imposter syndrome and genuinely thought I might fail.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>March 2025 Update - CSES Challenges and Raspberry Pi Plans</title>
-      <link>http://localhost:1313/posts/march_update_post/</link>
+      <link>https://cameronknox.io/posts/march_update_post/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:1313/posts/march_update_post/</guid>
+      <guid>https://cameronknox.io/posts/march_update_post/</guid>
       <description>&lt;h2 id=&#34;what-ive-been-up-to&#34;&gt;What I&amp;rsquo;ve Been Up To&lt;/h2&gt;&#xA;&lt;p&gt;This month I have been doing CSES challenges at &lt;a href=&#34;https://cses.fi/problemset/&#34;&gt;https://cses.fi/problemset/&lt;/a&gt;. C++ is one of the languages that I have used in the past to build console applications but I am finding myself getting more interested in it again while doing these problems.&lt;/p&gt;&#xA;&lt;h2 id=&#34;raspberry-pi-projects&#34;&gt;Raspberry Pi Projects&lt;/h2&gt;&#xA;&lt;p&gt;Another thing that I also would like to start doing is using my &lt;strong&gt;Raspberry Pi 4 Model B 2GB&lt;/strong&gt;. I bought it a while back and want to setup a server of some kind to either stream media or monitor my devices.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My Current Tech Setup</title>
-      <link>http://localhost:1313/posts/current_setups_post/</link>
+      <link>https://cameronknox.io/posts/current_setups_post/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:1313/posts/current_setups_post/</guid>
+      <guid>https://cameronknox.io/posts/current_setups_post/</guid>
       <description>&lt;p&gt;Here&amp;rsquo;s a breakdown of my current tech setup across different categories.&lt;/p&gt;&#xA;&lt;h2 id=&#34;media-streaming-setups&#34;&gt;Media Streaming Setups&lt;/h2&gt;&#xA;&lt;h3 id=&#34;apple-tv-setup&#34;&gt;Apple TV Setup&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Kodi on Apple TV 4k&lt;/strong&gt;: &lt;a href=&#34;https://www.koditvbox.tv&#34;&gt;koditvbox.tv&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;RealDebrid&lt;/strong&gt; with CoCoscrapper and Fenlight: &lt;a href=&#34;https://umbrellaplug.github.io/&#34;&gt;umbrellaplug.github.io&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;living-room-tv-setup&#34;&gt;Living Room TV Setup&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Stremio&lt;/strong&gt; with Torrentio addon: &lt;a href=&#34;https://torrentio.strem.fun/configure&#34;&gt;torrentio.strem.fun&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Amazon Firestick 4k&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;Using &lt;strong&gt;Alldebrid&lt;/strong&gt; for my girlfriend&amp;rsquo;s firestick which seems to work the same&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;peripherals&#34;&gt;Peripherals&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Mouse&lt;/strong&gt;: Razer Death Adder V2&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Microphone&lt;/strong&gt;: Blue Yeti Mic&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Webcam&lt;/strong&gt;: Some Old Webcam&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Keyboard&lt;/strong&gt;: Nuphy Halo75 keyboard with G Pro Red 2.0 switches&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;apple-products&#34;&gt;Apple Products&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;(Yes I have a lot and I am ashamed)&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Blog Entry</title>
-      <link>http://localhost:1313/posts/first_blog_post/</link>
+      <link>https://cameronknox.io/posts/first_blog_post/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:1313/posts/first_blog_post/</guid>
+      <guid>https://cameronknox.io/posts/first_blog_post/</guid>
       <description>&lt;p&gt;This is going to be my first entry. This is my personal website, and while it&amp;rsquo;s mainly just a blog, I&amp;rsquo;d like to use it to post most of the things I&amp;rsquo;ve been working on or plan to work on. I also want to share things that interest me at the time I&amp;rsquo;m writing. With that in mind, I thought I&amp;rsquo;d list some of the things I&amp;rsquo;m currently focused on.&lt;/p&gt;</description>
     </item>
   </channel>

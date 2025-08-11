@@ -1,0 +1,32 @@
+{{ define "main" }}
+<main>
+    <h1>Posts tagged "{{ .Title }}"</h1>
+    <p class="post-meta">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} with this tag</p>
+    
+    <div class="post-list">
+        {{ range .Pages }}
+        <article class="post-item">
+            <h2 class="post-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h2>
+            <div class="post-meta">
+                {{ .Date.Format "Jan 2, 2006" }}
+                {{ if .Params.categories }}
+                • {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}<a href="/categories/{{ $category | urlize }}">{{ $category }}</a>{{ end }}
+                {{ end }}
+            </div>
+            {{ if .Description }}
+            <p class="post-description">{{ .Description }}</p>
+            {{ end }}
+            {{ if .Params.tags }}
+            <div class="tags">
+                {{ range .Params.tags }}
+                <a href="/tags/{{ . | urlize }}" class="tag{{ if eq . $.Title }} active{{ end }}">{{ . }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </article>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

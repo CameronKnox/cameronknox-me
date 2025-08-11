@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Camerons Blog</title>
-    <link>http://localhost:1313/tags/programming/</link>
+    <link>https://cameronknox.io/tags/programming/</link>
     <description>Recent content in Programming on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
     <lastBuildDate>Wed, 05 Mar 2025 20:27:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cameronknox.io/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>March 2025 Update - CSES Challenges and Raspberry Pi Plans</title>
-      <link>http://localhost:1313/posts/march_update_post/</link>
+      <link>https://cameronknox.io/posts/march_update_post/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:1313/posts/march_update_post/</guid>
+      <guid>https://cameronknox.io/posts/march_update_post/</guid>
       <description>&lt;h2 id=&#34;what-ive-been-up-to&#34;&gt;What I&amp;rsquo;ve Been Up To&lt;/h2&gt;&#xA;&lt;p&gt;This month I have been doing CSES challenges at &lt;a href=&#34;https://cses.fi/problemset/&#34;&gt;https://cses.fi/problemset/&lt;/a&gt;. C++ is one of the languages that I have used in the past to build console applications but I am finding myself getting more interested in it again while doing these problems.&lt;/p&gt;&#xA;&lt;h2 id=&#34;raspberry-pi-projects&#34;&gt;Raspberry Pi Projects&lt;/h2&gt;&#xA;&lt;p&gt;Another thing that I also would like to start doing is using my &lt;strong&gt;Raspberry Pi 4 Model B 2GB&lt;/strong&gt;. I bought it a while back and want to setup a server of some kind to either stream media or monitor my devices.&lt;/p&gt;</description>
     </item>
   </channel>
