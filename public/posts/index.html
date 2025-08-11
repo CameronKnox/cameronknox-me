@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=64084&amp;path=livereload" data-no-instant defer></script>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Posts | Camerons Blog</title>
@@ -21,33 +21,40 @@
     
     
     <script>
+        
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.documentElement.style.setProperty('color-scheme', 'light');
+        
         (function() {
             try {
                 const THEME_KEY = 'theme-preference';
-                let theme;
+                let theme = 'light'; 
                 
                 
                 try {
-                    theme = localStorage.getItem(THEME_KEY);
+                    const stored = localStorage.getItem(THEME_KEY);
+                    if (stored === 'dark' || stored === 'light') {
+                        theme = stored;
+                    }
                 } catch (e) {
                     
-                    theme = null;
                 }
                 
                 
-                if (!theme) {
+                if (!localStorage.getItem(THEME_KEY)) {
                     try {
-                        theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                            theme = 'dark';
+                        }
                     } catch (e) {
-                        theme = 'light'; 
+                        
                     }
                 }
                 
                 
-                if (theme) {
-                    document.documentElement.setAttribute('data-theme', theme);
-                    document.documentElement.style.setProperty('color-scheme', theme);
-                }
+                document.documentElement.setAttribute('data-theme', theme);
+                document.documentElement.style.setProperty('color-scheme', theme);
+                
             } catch (e) {
                 
                 document.documentElement.setAttribute('data-theme', 'light');
@@ -152,7 +159,7 @@
         
         <article class="post-item">
             <h2 class="post-title">
-                <a href="http://localhost:64084/posts/mind_blown_post/">My mind is blown wide open</a>
+                <a href="http://localhost:1313/posts/mind_blown_post/">My mind is blown wide open</a>
             </h2>
             <div class="post-meta">
                 Aug 8, 2025
@@ -182,7 +189,7 @@
         
         <article class="post-item">
             <h2 class="post-title">
-                <a href="http://localhost:64084/posts/march_update_post/">March 2025 Update - CSES Challenges and Raspberry Pi Plans</a>
+                <a href="http://localhost:1313/posts/march_update_post/">March 2025 Update - CSES Challenges and Raspberry Pi Plans</a>
             </h2>
             <div class="post-meta">
                 Mar 5, 2025
@@ -212,7 +219,7 @@
         
         <article class="post-item">
             <h2 class="post-title">
-                <a href="http://localhost:64084/posts/current_setups_post/">My Current Tech Setup</a>
+                <a href="http://localhost:1313/posts/current_setups_post/">My Current Tech Setup</a>
             </h2>
             <div class="post-meta">
                 Feb 5, 2025
@@ -242,7 +249,7 @@
         
         <article class="post-item">
             <h2 class="post-title">
-                <a href="http://localhost:64084/posts/first_blog_post/">My First Blog Entry</a>
+                <a href="http://localhost:1313/posts/first_blog_post/">My First Blog Entry</a>
             </h2>
             <div class="post-meta">
                 Jan 23, 2025

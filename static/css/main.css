@@ -45,19 +45,7 @@
     --color-code-text: #e1e5e9;
 }
 
-/* Auto dark mode (fallback for users without JS) */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-        --color-text: #e1e5e9;
-        --color-text-muted: #8b949e;
-        --color-bg: #0d1117;
-        --color-accent: #58a6ff;
-        --color-accent-light: #1f2937;
-        --color-border: #30363d;
-        --color-code-bg: #161b22;
-        --color-code-text: #e1e5e9;
-    }
-}
+/* Removed auto dark mode media query to prevent flashing */
 
 body {
     font-family: var(--font-serif);

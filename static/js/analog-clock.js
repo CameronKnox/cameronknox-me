@@ -1,7 +1,6 @@
 // Global clock variables
 let clockInterval = null;
 let clockElements = null;
-let lastUpdate = 0;
 
 // Cache clock elements for better performance
 function getCacheClockElements() {
@@ -15,16 +14,8 @@ function getCacheClockElements() {
     return clockElements;
 }
 
-// Optimized clock animation using requestAnimationFrame
+// Smooth clock animation optimized for production
 function updateClock() {
-    const now = performance.now();
-    
-    // Throttle updates to avoid excessive rendering
-    if (now - lastUpdate < 50) { // Max 20fps
-        return;
-    }
-    lastUpdate = now;
-    
     const time = new Date();
     const hours = time.getHours();
     const minutes = time.getMinutes();
@@ -41,36 +32,29 @@ function updateClock() {
     const elements = getCacheClockElements();
     
     if (elements.hour && elements.minute && elements.second) {
-        // Use transform3d for hardware acceleration
+        // Apply transforms efficiently
         elements.hour.style.transform = `rotate(${hourAngle}deg)`;
         elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
         elements.second.style.transform = `rotate(${secondAngle}deg)`;
     }
 }
 
-// Use requestAnimationFrame for smooth animation
-function animateClock() {
-    updateClock();
-    if (clockInterval) {
-        requestAnimationFrame(animateClock);
-    }
-}
-
 function initializeClock() {
     // Clear any existing interval
     if (clockInterval) {
-        clockInterval = false;
+        clearInterval(clockInterval);
+        clockInterval = null;
     }
     
     // Reset cached elements in case of page navigation
     clockElements = null;
     
-    // Set initial time
+    // Set initial time immediately
     updateClock();
     
-    // Start animation loop
-    clockInterval = true;
-    requestAnimationFrame(animateClock);
+    // Use a more conservative update interval for production stability
+    // 16ms ≈ 60fps, but with better compatibility than requestAnimationFrame
+    clockInterval = setInterval(updateClock, 16);
 }
 
 // Initialize clock when DOM is loaded
@@ -85,14 +69,24 @@ document.addEventListener('visibilitychange', function() {
 
 // Handle page unload to clean up
 window.addEventListener('beforeunload', function() {
-    clockInterval = false;
+    if (clockInterval) {
+        clearInterval(clockInterval);
+        clockInterval = null;
+    }
 });
 
 // Handle page visibility changes for better performance
 document.addEventListener('visibilitychange', function() {
     if (document.hidden) {
-        clockInterval = false;
+        if (clockInterval) {
+            clearInterval(clockInterval);
+            clockInterval = null;
+        }
     } else {
-        initializeClock();
+        // Re-sync time when tab becomes visible
+        updateClock();
+        if (!clockInterval) {
+            initializeClock();
+        }
     }
 });
