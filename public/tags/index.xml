@@ -2,144 +2,144 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Camerons Blog</title>
-    <link>http://localhost:64084/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
     <lastBuildDate>Fri, 08 Aug 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:64084/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Claude</title>
-      <link>http://localhost:64084/tags/claude/</link>
+      <link>http://localhost:1313/tags/claude/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/claude/</guid>
+      <guid>http://localhost:1313/tags/claude/</guid>
       <description></description>
     </item>
     <item>
       <title>Development</title>
-      <link>http://localhost:64084/tags/development/</link>
+      <link>http://localhost:1313/tags/development/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/development/</guid>
+      <guid>http://localhost:1313/tags/development/</guid>
       <description></description>
     </item>
     <item>
       <title>Lms</title>
-      <link>http://localhost:64084/tags/lms/</link>
+      <link>http://localhost:1313/tags/lms/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/lms/</guid>
+      <guid>http://localhost:1313/tags/lms/</guid>
       <description></description>
     </item>
     <item>
       <title>React</title>
-      <link>http://localhost:64084/tags/react/</link>
+      <link>http://localhost:1313/tags/react/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/react/</guid>
+      <guid>http://localhost:1313/tags/react/</guid>
       <description></description>
     </item>
     <item>
       <title>Work</title>
-      <link>http://localhost:64084/tags/work/</link>
+      <link>http://localhost:1313/tags/work/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/work/</guid>
+      <guid>http://localhost:1313/tags/work/</guid>
       <description></description>
     </item>
     <item>
       <title>C&#43;&#43;</title>
-      <link>http://localhost:64084/tags/c&#43;&#43;/</link>
+      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/c&#43;&#43;/</guid>
+      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     <item>
       <title>Cses</title>
-      <link>http://localhost:64084/tags/cses/</link>
+      <link>http://localhost:1313/tags/cses/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/cses/</guid>
+      <guid>http://localhost:1313/tags/cses/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
-      <link>http://localhost:64084/tags/programming/</link>
+      <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/programming/</guid>
+      <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Raspberry-Pi</title>
-      <link>http://localhost:64084/tags/raspberry-pi/</link>
+      <link>http://localhost:1313/tags/raspberry-pi/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/raspberry-pi/</guid>
+      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
       <description></description>
     </item>
     <item>
       <title>Server</title>
-      <link>http://localhost:64084/tags/server/</link>
+      <link>http://localhost:1313/tags/server/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/server/</guid>
+      <guid>http://localhost:1313/tags/server/</guid>
       <description></description>
     </item>
     <item>
       <title>Apple</title>
-      <link>http://localhost:64084/tags/apple/</link>
+      <link>http://localhost:1313/tags/apple/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/apple/</guid>
+      <guid>http://localhost:1313/tags/apple/</guid>
       <description></description>
     </item>
     <item>
       <title>Peripherals</title>
-      <link>http://localhost:64084/tags/peripherals/</link>
+      <link>http://localhost:1313/tags/peripherals/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/peripherals/</guid>
+      <guid>http://localhost:1313/tags/peripherals/</guid>
       <description></description>
     </item>
     <item>
       <title>Setup</title>
-      <link>http://localhost:64084/tags/setup/</link>
+      <link>http://localhost:1313/tags/setup/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/setup/</guid>
+      <guid>http://localhost:1313/tags/setup/</guid>
       <description></description>
     </item>
     <item>
       <title>Streaming</title>
-      <link>http://localhost:64084/tags/streaming/</link>
+      <link>http://localhost:1313/tags/streaming/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/streaming/</guid>
+      <guid>http://localhost:1313/tags/streaming/</guid>
       <description></description>
     </item>
     <item>
       <title>Tech</title>
-      <link>http://localhost:64084/tags/tech/</link>
+      <link>http://localhost:1313/tags/tech/</link>
       <pubDate>Wed, 05 Feb 2025 17:45:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/tech/</guid>
+      <guid>http://localhost:1313/tags/tech/</guid>
       <description></description>
     </item>
     <item>
       <title>3d-Printing</title>
-      <link>http://localhost:64084/tags/3d-printing/</link>
+      <link>http://localhost:1313/tags/3d-printing/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/3d-printing/</guid>
+      <guid>http://localhost:1313/tags/3d-printing/</guid>
       <description></description>
     </item>
     <item>
       <title>Ai</title>
-      <link>http://localhost:64084/tags/ai/</link>
+      <link>http://localhost:1313/tags/ai/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/ai/</guid>
+      <guid>http://localhost:1313/tags/ai/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal</title>
-      <link>http://localhost:64084/tags/personal/</link>
+      <link>http://localhost:1313/tags/personal/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/personal/</guid>
+      <guid>http://localhost:1313/tags/personal/</guid>
       <description></description>
     </item>
     <item>
       <title>Website</title>
-      <link>http://localhost:64084/tags/website/</link>
+      <link>http://localhost:1313/tags/website/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:64084/tags/website/</guid>
+      <guid>http://localhost:1313/tags/website/</guid>
       <description></description>
     </item>
   </channel>

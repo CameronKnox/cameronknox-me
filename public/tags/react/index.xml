@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>React on Camerons Blog</title>
-    <link>http://localhost:64084/tags/react/</link>
+    <link>http://localhost:1313/tags/react/</link>
     <description>Recent content in React on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
     <lastBuildDate>Fri, 08 Aug 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:64084/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My mind is blown wide open</title>
-      <link>http://localhost:64084/posts/mind_blown_post/</link>
+      <link>http://localhost:1313/posts/mind_blown_post/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/posts/mind_blown_post/</guid>
+      <guid>http://localhost:1313/posts/mind_blown_post/</guid>
       <description>&lt;p&gt;Recently, I was tasked with building a new &lt;strong&gt;Learning Management System (LMS)&lt;/strong&gt; for my company, and the experience has completely changed my perspective on what&amp;rsquo;s possible with modern development tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Our company currently uses &lt;strong&gt;OutSystems&lt;/strong&gt; for most of our applications since we already have another internal app running on that platform. While OutSystems has its place, I&amp;rsquo;ve found it increasingly frustrating to work with for this particular project:&lt;/p&gt;</description>
     </item>
   </channel>

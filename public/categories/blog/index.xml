@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on Camerons Blog</title>
-    <link>http://localhost:64084/categories/blog/</link>
+    <link>http://localhost:1313/categories/blog/</link>
     <description>Recent content in Blog on Camerons Blog</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <copyright>© CameronKnox</copyright>
     <lastBuildDate>Fri, 08 Aug 2025 09:30:00 -0500</lastBuildDate>
-    <atom:link href="http://localhost:64084/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>My mind is blown wide open</title>
-      <link>http://localhost:64084/posts/mind_blown_post/</link>
+      <link>http://localhost:1313/posts/mind_blown_post/</link>
       <pubDate>Fri, 08 Aug 2025 09:30:00 -0500</pubDate>
-      <guid>http://localhost:64084/posts/mind_blown_post/</guid>
+      <guid>http://localhost:1313/posts/mind_blown_post/</guid>
       <description>&lt;p&gt;Recently, I was tasked with building a new &lt;strong&gt;Learning Management System (LMS)&lt;/strong&gt; for my company, and the experience has completely changed my perspective on what&amp;rsquo;s possible with modern development tools.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Our company currently uses &lt;strong&gt;OutSystems&lt;/strong&gt; for most of our applications since we already have another internal app running on that platform. While OutSystems has its place, I&amp;rsquo;ve found it increasingly frustrating to work with for this particular project:&lt;/p&gt;</description>
     </item>
     <item>
       <title>March 2025 Update - CSES Challenges and Raspberry Pi Plans</title>
-      <link>http://localhost:64084/posts/march_update_post/</link>
+      <link>http://localhost:1313/posts/march_update_post/</link>
       <pubDate>Wed, 05 Mar 2025 20:27:00 -0500</pubDate>
-      <guid>http://localhost:64084/posts/march_update_post/</guid>
+      <guid>http://localhost:1313/posts/march_update_post/</guid>
       <description>&lt;p&gt;March has been an exciting month for diving deeper into programming and planning some hardware projects. Here&amp;rsquo;s what I&amp;rsquo;ve been working on and what&amp;rsquo;s coming next.&lt;/p&gt;&#xA;&lt;h2 id=&#34;programming-challenges-with-cses&#34;&gt;Programming Challenges with CSES&lt;/h2&gt;&#xA;&lt;p&gt;I&amp;rsquo;ve been spending considerable time working through problems on the &lt;a href=&#34;https://cses.fi/problemset/&#34;&gt;CSES Problem Set&lt;/a&gt;, and it&amp;rsquo;s been incredibly rewarding. For those unfamiliar, CSES is a collection of competitive programming problems that really test your algorithmic thinking.&lt;/p&gt;&#xA;&lt;h3 id=&#34;rediscovering-c&#34;&gt;Rediscovering C++&lt;/h3&gt;&#xA;&lt;p&gt;While I&amp;rsquo;ve used &lt;strong&gt;C++&lt;/strong&gt; in the past for console applications, tackling these algorithmic challenges has rekindled my appreciation for the language. There&amp;rsquo;s something satisfying about the performance and control that C++ offers when solving complex problems. The language forces you to think carefully about memory management and efficiency—skills that are invaluable in competitive programming.&lt;/p&gt;</description>
     </item>
     <item>
       <title>My First Blog Entry</title>
-      <link>http://localhost:64084/posts/first_blog_post/</link>
+      <link>http://localhost:1313/posts/first_blog_post/</link>
       <pubDate>Thu, 23 Jan 2025 15:25:00 -0500</pubDate>
-      <guid>http://localhost:64084/posts/first_blog_post/</guid>
+      <guid>http://localhost:1313/posts/first_blog_post/</guid>
       <description>&lt;p&gt;Welcome to my personal website! This is my first blog entry, and I&amp;rsquo;m excited to share what I&amp;rsquo;m currently working on and what interests me.&lt;/p&gt;&#xA;&lt;p&gt;This blog will be my space to document projects, share discoveries, and explore topics that fascinate me. I want to keep you updated on my journey through technology, creativity, and everything in between.&lt;/p&gt;&#xA;&lt;h2 id=&#34;current-projects&#34;&gt;Current Projects&lt;/h2&gt;&#xA;&lt;p&gt;Right now, my main focus is &lt;strong&gt;building out this website&lt;/strong&gt;. While it may look simple now, I&amp;rsquo;m working hard to make it both functional and visually appealing. There&amp;rsquo;s still plenty of work to do, but I&amp;rsquo;m enjoying the process of creating something from scratch.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -584,50 +584,254 @@ footer {
 }
 
 /* Responsive */
-@media (max-width: 600px) {
+
+/* Tablet styles */
+@media (max-width: 768px) {
     .container {
         padding: 0 1.5rem;
-    }
-    
-    header {
-        padding: 1rem 0;
-    }
-    
-    .header-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .header-left {
-        order: -1;
-        margin-bottom: 1rem;
-    }
-    
-    .header-right {
-        width: 100%;
-        justify-content: space-between;
-        gap: 1rem;
     }
     
     nav ul {
         gap: 1.5rem;
     }
     
+    .terms-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    header {
+        padding: 0.75rem 0;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .header-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-bottom: 0;
+    }
+    
+    .header-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    
+    nav ul {
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    
+    nav a {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .theme-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 0.5rem;
+        flex-shrink: 0;
+    }
+    
+    .site-title {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    .analog-clock .clock-svg {
+        width: 45px;
+        height: 45px;
+    }
+    
     h1 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
+        text-align: center;
+        margin-bottom: 1rem;
     }
     
     h2 {
-        font-size: 1.35rem;
+        font-size: 1.3rem;
+    }
+    
+    main {
+        margin-bottom: 2rem;
+    }
+    
+    .post-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .post-title {
+        font-size: 1.2rem;
+        text-align: left;
+    }
+    
+    .post-meta {
+        font-size: 0.8rem;
+    }
+    
+    .post-description {
+        font-size: 0.9rem;
     }
     
     .terms-list {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
     
     .footer-content {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+    
+    .social-links a {
+        padding: 0.6rem;
+        min-width: 44px;
+        min-height: 44px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    body {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    .header-content {
+        gap: 0.75rem;
+    }
+    
+    .header-left {
+        gap: 0.5rem;
+    }
+    
+    nav ul {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.75rem;
+        min-height: 40px;
+    }
+    
+    .site-title {
+        font-size: 1.1rem;
+    }
+    
+    .analog-clock .clock-svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .theme-toggle {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0.4rem;
+    }
+    
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    h2 {
+        font-size: 1.2rem;
+        margin-top: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.05rem;
+    }
+    
+    .post-item {
+        margin-bottom: 1.25rem;
+        padding-bottom: 1.25rem;
+    }
+    
+    .post-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .post-meta {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .post-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .post-content {
+        margin-top: 1rem;
+    }
+    
+    .post-content ul, .post-content ol {
+        margin-left: 1.25rem;
+    }
+    
+    .tag {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        margin-right: 0.3rem;
+        margin-bottom: 0.3rem;
+        min-height: 28px;
+    }
+    
+    .term-item {
+        padding: 0.75rem;
+    }
+    
+    .footer-content {
+        gap: 0.75rem;
+    }
+    
+    .social-links a {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0.5rem;
     }
 }
