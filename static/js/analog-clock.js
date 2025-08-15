@@ -3,7 +3,7 @@
 // ================================
 let clockAnimationFrame = null;
 let clockElements = null;
-const ROTATION_OFFSET = -90; // Change to 0 if hands already point to 12 o'clock
+const ROTATION_OFFSET = 0; // Change to 0 if hands already point to 12 o'clock
 
 // Cache clock elements for better performance
 function getCacheClockElements() {
