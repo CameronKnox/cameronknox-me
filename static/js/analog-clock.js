@@ -1,6 +1,9 @@
-// Global clock variables
-let clockInterval = null;
+// ================================
+// Fully Smooth Local-Time Clock
+// ================================
+let clockAnimationFrame = null;
 let clockElements = null;
+const ROTATION_OFFSET = 0; // Change to 0 if hands already point to 12 o'clock
 
 // Cache clock elements for better performance
 function getCacheClockElements() {
@@ -8,85 +11,72 @@ function getCacheClockElements() {
         clockElements = {
             hour: document.getElementById('hour-hand'),
             minute: document.getElementById('minute-hand'),
-            second: document.getElementById('second-hand')
+            second: document.getElementById('second-hand'),
+            digital: document.getElementById('digital-clock')
         };
     }
     return clockElements;
 }
 
-// Smooth clock animation optimized for production
+// Format time with leading zeros
+function pad(num) {
+    return num.toString().padStart(2, '0');
+}
+
+// Update analog and digital clock
 function updateClock() {
-    const time = new Date();
+    const time = new Date(); // Local device time
     const hours = time.getHours();
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
     const milliseconds = time.getMilliseconds();
-    
-    // Calculate smooth angles
-    const smoothSeconds = seconds + (milliseconds / 1000);
-    const secondAngle = (smoothSeconds * 6) - 90;
-    const minuteAngle = (minutes * 6 + smoothSeconds * 0.1) - 90;
-    const hourAngle = ((hours % 12) * 30 + minutes * 0.5) - 90;
-    
-    // Get cached elements
+
+    // Smooth calculations
+    const smoothSeconds = seconds + milliseconds / 1000;
+    const smoothMinutes = minutes + smoothSeconds / 60;
+    const smoothHours = (hours % 12) + smoothMinutes / 60;
+
+    // Angles
+    const secondAngle = smoothSeconds * 6 + ROTATION_OFFSET;
+    const minuteAngle = smoothMinutes * 6 + ROTATION_OFFSET;
+    const hourAngle = smoothHours * 30 + ROTATION_OFFSET;
+
+    // Apply transforms
     const elements = getCacheClockElements();
-    
     if (elements.hour && elements.minute && elements.second) {
-        // Apply transforms efficiently
         elements.hour.style.transform = `rotate(${hourAngle}deg)`;
         elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
         elements.second.style.transform = `rotate(${secondAngle}deg)`;
     }
+
+    // Update digital clock (HH:MM:SS)
+    if (elements.digital) {
+        elements.digital.textContent = 
+            `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+    }
+
+    clockAnimationFrame = requestAnimationFrame(updateClock);
 }
 
 function initializeClock() {
-    // Clear any existing interval
-    if (clockInterval) {
-        clearInterval(clockInterval);
-        clockInterval = null;
-    }
-    
-    // Reset cached elements in case of page navigation
-    clockElements = null;
-    
-    // Set initial time immediately
+    cancelAnimationFrame(clockAnimationFrame);
+    clockElements = null; // Reset cache
     updateClock();
-    
-    // Use a more conservative update interval for production stability
-    // 16ms ≈ 60fps, but with better compatibility than requestAnimationFrame
-    clockInterval = setInterval(updateClock, 16);
 }
 
-// Initialize clock when DOM is loaded
+// Start clock when DOM is ready
 document.addEventListener('DOMContentLoaded', initializeClock);
 
-// Re-initialize on page visibility change (handles tab switching)
-document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-        updateClock(); // Sync time when tab becomes visible
-    }
-});
-
-// Handle page unload to clean up
-window.addEventListener('beforeunload', function() {
-    if (clockInterval) {
-        clearInterval(clockInterval);
-        clockInterval = null;
-    }
-});
-
-// Handle page visibility changes for better performance
-document.addEventListener('visibilitychange', function() {
+// Stop when hidden, resume when visible
+document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        if (clockInterval) {
-            clearInterval(clockInterval);
-            clockInterval = null;
-        }
+        cancelAnimationFrame(clockAnimationFrame);
     } else {
-        // Re-sync time when tab becomes visible
-        updateClock();
-        if (!clockInterval) {
-            initializeClock();
-        }
+        initializeClock();
     }
+});
+
+// Clean up on unload
+window.addEventListener('beforeunload', function () {
+    cancelAnimationFrame(clockAnimationFrame);
 });
