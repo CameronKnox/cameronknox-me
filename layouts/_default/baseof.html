@@ -32,44 +32,45 @@
     
     <!-- Inline theme initialization to prevent FOUC -->
     <script>
-        // Immediately set light theme as default to prevent any flashing
-        document.documentElement.setAttribute('data-theme', 'light');
-        document.documentElement.style.setProperty('color-scheme', 'light');
-        
         (function() {
             try {
                 const THEME_KEY = 'theme-preference';
                 let theme = 'light'; // Default to light
-                
-                // Try to get stored preference
+
+                // Disable transitions during initial load
+                document.documentElement.classList.add('no-transitions');
+
+                // Try to get stored preference first
                 try {
                     const stored = localStorage.getItem(THEME_KEY);
                     if (stored === 'dark' || stored === 'light') {
                         theme = stored;
-                    }
-                } catch (e) {
-                    // localStorage not available, keep light default
-                }
-                
-                // Only check system preference if no stored preference
-                if (!localStorage.getItem(THEME_KEY)) {
-                    try {
+                    } else {
+                        // Only check system preference if no stored preference
                         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
                             theme = 'dark';
                         }
-                    } catch (e) {
-                        // Keep light default
                     }
+                } catch (e) {
+                    // localStorage not available or error, keep light default
                 }
-                
-                // Apply the final theme
+
+                // Apply theme immediately (only once)
                 document.documentElement.setAttribute('data-theme', theme);
                 document.documentElement.style.setProperty('color-scheme', theme);
-                
+
+                // Re-enable transitions after a brief delay
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        document.documentElement.classList.remove('no-transitions');
+                    });
+                });
+
             } catch (e) {
                 // Ensure light theme if anything fails
                 document.documentElement.setAttribute('data-theme', 'light');
                 document.documentElement.style.setProperty('color-scheme', 'light');
+                document.documentElement.classList.remove('no-transitions');
             }
         })();
     </script>

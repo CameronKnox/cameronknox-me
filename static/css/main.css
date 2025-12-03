@@ -3,6 +3,15 @@
     color-scheme: light;
 }
 
+/* Disable all transitions during page load to prevent theme flash */
+.no-transitions,
+.no-transitions *,
+.no-transitions *::before,
+.no-transitions *::after {
+    transition: none !important;
+    animation: none !important;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
