@@ -70,7 +70,37 @@
             applyTheme(e.matches ? 'dark' : 'light');
         }
     });
-    
+
+    // Function to reapply theme without flash
+    const reapplyThemeWithoutFlash = () => {
+        document.documentElement.classList.add('no-transitions');
+        const theme = getThemePreference();
+        document.documentElement.setAttribute('data-theme', theme);
+        document.documentElement.style.setProperty('color-scheme', theme);
+
+        // Re-enable transitions after paint
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                document.documentElement.classList.remove('no-transitions');
+            });
+        });
+    };
+
+    // Handle tab visibility changes to prevent flash
+    document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+            reapplyThemeWithoutFlash();
+        }
+    });
+
+    // Handle bfcache (back/forward cache) restores in production
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            // Page was restored from bfcache
+            reapplyThemeWithoutFlash();
+        }
+    });
+
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeTheme);
