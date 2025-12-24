@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main>
     <div class="post-list">
-        {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
+        {{ range where .Site.RegularPages "Section" "posts" }}
         <article class="post-item">
             <h2 class="post-title">
                 <a href="{{ .Permalink }}">{{ .Title }}</a>

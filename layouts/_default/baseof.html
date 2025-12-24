@@ -86,7 +86,34 @@
     {{ else if .Site.Params.description }}
     <meta name="description" content="{{ .Site.Params.description }}">
     {{ end }}
-    
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}">
+    {{ if .Description }}
+    <meta property="og:description" content="{{ .Description }}">
+    {{ else if .Site.Params.description }}
+    <meta property="og:description" content="{{ .Site.Params.description }}">
+    {{ end }}
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    {{ if .IsPage }}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ if .Lastmod }}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ end }}
+    {{ end }}
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+    {{ if .Description }}
+    <meta name="twitter:description" content="{{ .Description }}">
+    {{ else if .Site.Params.description }}
+    <meta name="twitter:description" content="{{ .Site.Params.description }}">
+    {{ end }}
+
     {{ block "head" . }}{{ end }}
 </head>
 <body>
@@ -135,6 +162,7 @@
                             {{ range .Site.Menus.main }}
                             <li><a href="{{ .URL }}">{{ .Name }}</a></li>
                             {{ end }}
+                            <li><a href="/index.xml" aria-label="RSS Feed" title="Subscribe via RSS">RSS</a></li>
                         </ul>
                     </nav>
                     <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">

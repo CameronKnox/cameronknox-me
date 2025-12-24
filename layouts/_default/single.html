@@ -8,6 +8,7 @@
                 {{ if .Lastmod }}
                 • Updated {{ .Lastmod.Format "January 2, 2006" }}
                 {{ end }}
+                • {{ .ReadingTime }} min read
                 {{ if .Params.categories }}
                 • {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}<a href="/categories/{{ $category | urlize }}">{{ $category }}</a>{{ end }}
                 {{ end }}
@@ -28,6 +29,19 @@
             {{ end }}
         </div>
         {{ end }}
+
+        <nav class="post-navigation">
+            {{ with .PrevInSection }}
+            <div class="nav-previous">
+                <a href="{{ .Permalink }}" rel="prev">← {{ .Title }}</a>
+            </div>
+            {{ end }}
+            {{ with .NextInSection }}
+            <div class="nav-next">
+                <a href="{{ .Permalink }}" rel="next">{{ .Title }} →</a>
+            </div>
+            {{ end }}
+        </nav>
     </article>
 </main>
 {{ end }}

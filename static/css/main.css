@@ -834,3 +834,94 @@ footer {
         padding: 0.5rem;
     }
 }
+/* Post Navigation (Previous/Next) */
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.post-navigation a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex: 1;
+    max-width: 48%;
+}
+
+.post-navigation a:hover {
+    background: var(--color-accent-light);
+    border-color: var(--color-accent);
+}
+
+.nav-previous {
+    text-align: left;
+}
+
+.nav-next {
+    text-align: right;
+}
+
+@media (max-width: 600px) {
+    .post-navigation {
+        flex-direction: column;
+    }
+    
+    .post-navigation a {
+        max-width: 100%;
+    }
+    
+    .nav-next {
+        text-align: left;
+    }
+}
+
+/* 404 Error Page */
+.error-404 {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.error-404 h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    color: var(--color-accent);
+}
+
+.error-message {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.error-404 p {
+    margin-bottom: 2rem;
+    color: var(--color-text-muted);
+}
+
+.error-nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error-nav a {
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.error-nav a:hover {
+    background: var(--color-accent-light);
+    border-color: var(--color-accent);
+}
