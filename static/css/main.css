@@ -282,18 +282,6 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-/* Ensure consistent h1 styling in all sectioned content */
-section h1,
-article h1,
-aside h1,
-nav h1,
-main h1,
-header h1,
-footer h1 {
-    font-size: 2rem !important;
-    margin-bottom: 1.5rem !important;
-}
-
 h2 {
     font-size: 1.5rem;
     margin-top: 2rem;
@@ -435,12 +423,12 @@ pre code {
     color: var(--color-bg);
     text-decoration: none;
     border-color: var(--color-accent);
-    box-shadow: 0 2px 6px rgba(0, 102, 204, 0.25);
+    box-shadow: 0 2px 6px color-mix(in srgb, var(--color-accent) 25%, transparent);
 }
 
 .tag:active {
     transform: scale(0.97);
-    box-shadow: 0 1px 3px rgba(0, 102, 204, 0.2);
+    box-shadow: 0 1px 3px color-mix(in srgb, var(--color-accent) 20%, transparent);
 }
 
 /* Post content */
@@ -558,7 +546,7 @@ footer {
 .term-item:hover {
     border-color: var(--color-accent);
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px color-mix(in srgb, var(--color-text) 10%, transparent);
     text-decoration: none;
     color: var(--color-text);
 }
@@ -924,4 +912,29 @@ footer {
 .error-nav a:hover {
     background: var(--color-accent-light);
     border-color: var(--color-accent);
+}
+
+/* Focus visible for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* Text selection styling */
+::selection {
+    background: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
 }

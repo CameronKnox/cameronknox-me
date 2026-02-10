@@ -6,11 +6,15 @@
     
     // Get theme preference from localStorage or default to system preference
     const getThemePreference = () => {
-        if (localStorage.getItem(THEME_KEY)) {
-            return localStorage.getItem(THEME_KEY);
-        } else {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        try {
+            const stored = localStorage.getItem(THEME_KEY);
+            if (stored === 'dark' || stored === 'light') {
+                return stored;
+            }
+        } catch (e) {
+            // localStorage not available (private browsing, etc.)
         }
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     };
     
     // Apply theme to document
@@ -23,8 +27,8 @@
     const toggleTheme = () => {
         const currentTheme = getThemePreference();
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        localStorage.setItem(THEME_KEY, newTheme);
+
+        try { localStorage.setItem(THEME_KEY, newTheme); } catch (e) {}
         applyTheme(newTheme);
     };
     
@@ -66,9 +70,10 @@
     
     // Listen for system theme changes (only if no manual preference set)
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem(THEME_KEY)) {
-            applyTheme(e.matches ? 'dark' : 'light');
-        }
+        try {
+            if (localStorage.getItem(THEME_KEY)) return;
+        } catch (err) {}
+        applyTheme(e.matches ? 'dark' : 'light');
     });
 
     // Function to reapply theme without flash

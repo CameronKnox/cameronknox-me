@@ -3,8 +3,6 @@
 // ================================
 let clockAnimationFrame = null;
 let clockElements = null;
-let isInitialized = false;
-const ROTATION_OFFSET = 0;
 
 // Cache clock elements for better performance
 function getCacheClockElements() {
@@ -12,16 +10,10 @@ function getCacheClockElements() {
         clockElements = {
             hour: document.getElementById('hour-hand'),
             minute: document.getElementById('minute-hand'),
-            second: document.getElementById('second-hand'),
-            digital: document.getElementById('digital-clock')
+            second: document.getElementById('second-hand')
         };
     }
     return clockElements;
-}
-
-// Format time with leading zeros
-function pad(num) {
-    return num.toString().padStart(2, '0');
 }
 
 // Set initial position without animation to prevent stutter
@@ -50,9 +42,9 @@ function setInitialPosition() {
     const smoothMinutes = minutes + smoothSeconds / 60;
     const smoothHours = (hours % 12) + smoothMinutes / 60;
 
-    const secondAngle = smoothSeconds * 6 + ROTATION_OFFSET;
-    const minuteAngle = smoothMinutes * 6 + ROTATION_OFFSET;
-    const hourAngle = smoothHours * 30 + ROTATION_OFFSET;
+    const secondAngle = smoothSeconds * 6;
+    const minuteAngle = smoothMinutes * 6;
+    const hourAngle = smoothHours * 30;
 
     elements.hour.style.transform = `rotate(${hourAngle}deg)`;
     elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
@@ -76,9 +68,9 @@ function updateClock() {
     const smoothHours = (hours % 12) + smoothMinutes / 60;
 
     // Angles
-    const secondAngle = smoothSeconds * 6 + ROTATION_OFFSET;
-    const minuteAngle = smoothMinutes * 6 + ROTATION_OFFSET;
-    const hourAngle = smoothHours * 30 + ROTATION_OFFSET;
+    const secondAngle = smoothSeconds * 6;
+    const minuteAngle = smoothMinutes * 6;
+    const hourAngle = smoothHours * 30;
 
     // Apply transforms
     const elements = getCacheClockElements();
@@ -86,12 +78,6 @@ function updateClock() {
         elements.hour.style.transform = `rotate(${hourAngle}deg)`;
         elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
         elements.second.style.transform = `rotate(${secondAngle}deg)`;
-    }
-
-    // Update digital clock (HH:MM:SS)
-    if (elements.digital) {
-        elements.digital.textContent =
-            `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
     }
 
     clockAnimationFrame = requestAnimationFrame(updateClock);
@@ -111,7 +97,6 @@ function initializeClock() {
     setInitialPosition();
 
     // Start animation
-    isInitialized = true;
     clockAnimationFrame = requestAnimationFrame(updateClock);
 }
 

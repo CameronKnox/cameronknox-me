@@ -1,6 +1,6 @@
 baseURL = 'https://cameronknox.io/'
 languageCode = 'en-us'
-title = 'Camerons Blog'
+title = "Cameron's Blog"
 copyright = "© CameronKnox"
 
 pygmentsstyle = "monokai"

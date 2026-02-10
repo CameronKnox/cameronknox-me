@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git Rules
+
+- Never include "Co-Authored-By", "Created by", or "Generated with Claude Code" in commit messages or PR descriptions.
+
 ## Project Overview
 
 This is a personal tech blog built with Hugo static site generator. The site features:

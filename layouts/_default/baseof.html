@@ -8,11 +8,6 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
-    
     <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css">
     
@@ -143,7 +138,7 @@
                 <div class="header-left">
                     <!-- Analog Clock -->
                     <div class="analog-clock">
-                        <svg width="60" height="60" viewBox="0 0 60 60" class="clock-svg">
+                        <svg width="60" height="60" viewBox="0 0 60 60" class="clock-svg" role="img" aria-label="Analog clock showing current time">
                             <!-- Clock face -->
                             <circle cx="30" cy="30" r="28" fill="none" stroke="var(--color-border)" stroke-width="2"/>
                             
@@ -185,7 +180,7 @@
                             <li><a href="/index.xml" aria-label="RSS Feed" title="Subscribe via RSS">RSS</a></li>
                         </ul>
                     </nav>
-                    <button class="theme-toggle" aria-label="Toggle dark mode" title="Toggle theme">
+                    <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
                         <!-- Moon icon (default) -->
                         <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
