@@ -5,7 +5,7 @@
             <h1>{{ .Title }}</h1>
             <div class="post-meta">
                 {{ .Date.Format "January 2, 2006" }}
-                {{ if .Lastmod }}
+                {{ if and .Lastmod (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
                 • Updated {{ .Lastmod.Format "January 2, 2006" }}
                 {{ end }}
                 • {{ .ReadingTime }} min read

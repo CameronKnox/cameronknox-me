@@ -8,50 +8,28 @@ categories: ["blog"]
 draft: false
 ---
 
-Recently, I was tasked with building a new **Learning Management System (LMS)** for my company, and the experience has completely changed my perspective on what's possible with modern development tools.
+A little while back I got handed a pretty big task at work: build a new Learning Management System (LMS) for the company. I went in expecting a slog, and instead it ended up completely changing how I think about what's possible with the tools we have now.
 
-## The Challenge
+## The setup
 
-Our company currently uses **OutSystems** for most of our applications since we already have another internal app running on that platform. While OutSystems has its place, I've found it increasingly frustrating to work with for this particular project:
+Most of our apps run on OutSystems since we already have another internal app on it. OutSystems has its place, but for this project it kept getting in my way. The compile times were slow enough to break my focus, the codebase was a pain to track changes in, there wasn't much room to customize the features we actually needed, and extending content felt way more involved than it should have been.
 
-- **Slow compilation times** that interrupt the development flow
-- **Difficult codebase management** when trying to track changes
-- **Limited customization options** for the specific features we needed
-- **Cumbersome content extension** processes
+After enough of that, I didn't want to force this project into the same mold.
 
-## Taking a Different Path
+## Going off-script
 
-Instead of forcing this project into the OutSystems mold, I decided to take a risk and build it with **React.js and Vite**. This wasn't an easy decision—I was stepping outside our established workflow and betting on technologies that weren't part of our standard stack.
+So I made a call that felt a little risky: build it in React and Vite instead. That meant stepping outside our normal stack and betting on tools that weren't part of our standard workflow. It took a good amount of research and some fast learning, but I figured the upside was worth it. Honestly, the projects where I learn the most are usually the ones where I take that kind of swing.
 
-### Embracing New Technologies
+## Then I found Claude Code
 
-I approached this project strategically—while stepping outside our established workflow represented a departure from convention, it also presented an opportunity to deliver enhanced value to the team. This required thorough research, careful planning, and rapid skill development with modern technologies.
+This is the part that actually changed things for me. I'd tried other AI coding tools before, including Cursor and GitHub Copilot, but Claude Code clicked in a way they didn't. It lives in my terminal and understands my whole project instead of just autocompleting the next line. It helps me think through problems, it's genuinely useful when I'm stuck on a bug, and it gives me solid guidance on how to structure things.
 
-Taking calculated risks often drives the most meaningful innovation and growth.
+For $20, I had a working prototype built and deployed to Vercel in about two weeks. When I think about what that would've taken me otherwise, that's kind of wild.
 
-## Enter Claude Code
+## The honest part
 
-Everything changed when I discovered **Claude Code**. This tool didn't just help me write code—it completely transformed my entire development experience.
+It's not perfect. There are message caps, and you'll hit limits in certain windows. But for how I actually work, that hasn't really slowed me down.
 
-### What Made the Difference
+## Where it's headed
 
-Unlike other AI coding assistants I've tried (including Cursor and GitHub Copilot), Claude Code integrates seamlessly into my terminal and enhances every aspect of my workflow:
-
-- **Contextual understanding** of my entire project structure
-- **Intelligent problem-solving** that goes beyond simple code completion
-- **Real-time debugging assistance** when I hit roadblocks
-- **Architecture guidance** for building scalable components
-
-### Results That Speak for Themselves
-
-For just **$20**, I managed to build and deploy a working prototype on **Vercel** in just **two weeks**. The value proposition is incredible when you consider what I accomplished in that timeframe.
-
-## The Reality Check
-
-I won't pretend it's perfect—there are **message caps** and some limitations within certain time periods. But honestly? These haven't been major roadblocks in my development process.
-
-## Looking Forward
-
-I'm more excited than ever about the future of this project. What started as a daunting challenge has become one of the most rewarding development experiences I've had. I can't wait to demo what I've built and show the team what's possible when you combine modern tools with the right mindset.
-
-Sometimes the best way to validate new approaches is to build something that demonstrates their value.
+I'm more excited about this project than anything I've worked on in a while. What started as a daunting ask turned into one of the most fun stretches of development I've had. I can't wait to demo it and show the team what you can pull off with the right tools and a little willingness to go off the beaten path.

@@ -1,3 +1,20 @@
+/* Self-hosted JetBrains Mono (variable font) */
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('/fonts/jetbrains-mono-latin-wght-normal.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: italic;
+    font-weight: 100 800;
+    font-display: swap;
+    src: url('/fonts/jetbrains-mono-latin-wght-italic.woff2') format('woff2');
+}
+
 /* Prevent theme flash - set initial light theme */
 :root {
     color-scheme: light;
@@ -21,12 +38,10 @@
 
 /* Typography */
 :root {
-    --font-mono: 'Cascadia Code', 'Consolas', 'Courier New', 'SF Mono', 'Monaco', 'Menlo', monospace;
-    --font-sans: 'Cascadia Code', 'Consolas', 'Courier New', 'SF Mono', 'Monaco', monospace;
-    --font-serif: 'Cascadia Code', 'Consolas', 'Courier New', 'SF Mono', 'Monaco', monospace;
+    --font-mono: 'JetBrains Mono', 'Cascadia Code', 'Consolas', 'Courier New', 'SF Mono', 'Monaco', 'Menlo', monospace;
+    --font-sans: 'JetBrains Mono', 'Cascadia Code', 'Consolas', 'Courier New', 'SF Mono', 'Monaco', monospace;
 
     --max-width: 900px;
-    --spacing: 1.5rem;
 }
 
 /* Light theme (default) */
@@ -251,13 +266,6 @@ nav a.active {
     transform: rotate(15deg);
 }
 
-/* SVG icon styling */
-.theme-icon svg {
-    width: 20px;
-    height: 20px;
-    transition: all 0.2s ease;
-}
-
 .sun-icon,
 .moon-icon {
     transition: opacity 0.2s ease;
@@ -460,6 +468,33 @@ pre code {
     margin-bottom: 0.5rem;
 }
 
+.post-content hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 2rem 0;
+}
+
+.post-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+}
+
+.post-content th,
+.post-content td {
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.post-content th {
+    background: var(--color-code-bg);
+    font-weight: 600;
+}
+
 /* Footer */
 footer {
     font-family: var(--font-sans);
@@ -514,13 +549,6 @@ footer {
 
 .social-links a:hover .social-icon {
     transform: scale(1.1);
-}
-
-/* Tag highlighting */
-.tag.active {
-    background: var(--color-accent);
-    color: var(--color-bg);
-    font-weight: 600;
 }
 
 /* Terms list styling */
@@ -850,10 +878,12 @@ footer {
 
 .nav-previous {
     text-align: left;
+    margin-right: auto;
 }
 
 .nav-next {
     text-align: right;
+    margin-left: auto;
 }
 
 @media (max-width: 600px) {

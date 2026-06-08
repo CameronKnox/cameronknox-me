@@ -8,22 +8,24 @@ categories: ["blog"]
 draft: false
 ---
 
-Welcome to my personal website! This is my first blog entry, and I'm excited to share what I'm currently working on and what interests me.
+Welcome to the site. This is my first real post, so I figured I'd start by introducing myself a bit and talking about what I'm working on right now.
 
-This blog will be my space to document projects, share discoveries, and explore topics that fascinate me. I want to keep you updated on my journey through technology, creativity, and everything in between.
+I wanted a place of my own to write down what I'm building, the stuff I'm learning, and whatever random tech rabbit holes I fall into along the way. So that's what this is going to be.
 
-## Current Projects
+## Building this site
 
-Right now, my main focus is **building out this website**. While it may look simple now, I'm working hard to make it both functional and visually appealing. There's still plenty of work to do, but I'm enjoying the process of creating something from scratch.
+Most of my free time lately is going into this website. It's pretty simple at the moment, but I'm slowly turning it into something I actually like. Building something from scratch is half the fun for me, even when I'm fighting with it.
 
-## What Interests Me Right Now
+## What I'm into right now
 
-### Artificial Intelligence
-**AI** is absolutely captivating me at the moment. I'm constantly testing and experimenting with new models—currently exploring the Deepseek models, which have shown some really impressive capabilities. The rapid pace of AI development keeps me coming back for more.
+### AI
 
-### 3D Printing  
-I recently got my hands on a **Bambu Lab A1 with AMS**, and it's opened up a whole new world of possibilities. I've been printing all sorts of useful (and not so useful) things, learning about design, materials, and the incredible potential of additive manufacturing.
+AI has me completely hooked. I'm always testing new models to see what they can actually do, and right now I've been playing with the Deepseek models, which have genuinely surprised me a few times. The pace everything is moving at is what keeps pulling me back in.
 
-## Looking Ahead
+### 3D printing
 
-I'm planning to document my experiments, share tutorials, and write about the cool things I discover along the way. Stay tuned for more posts about my tech adventures!
+I recently picked up a Bambu Lab A1 with the AMS, and it's been a blast. I've printed a mix of genuinely useful things and complete junk, but either way I'm learning a ton about design and materials as I go.
+
+## What's next
+
+I'm going to use this space to document the experiments, write up the things I figure out, and share whatever's worth sharing. More soon.

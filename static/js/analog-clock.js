@@ -119,11 +119,3 @@ document.addEventListener('visibilitychange', function () {
         initializeClock();
     }
 });
-
-// Clean up on unload
-window.addEventListener('beforeunload', function () {
-    if (clockAnimationFrame) {
-        cancelAnimationFrame(clockAnimationFrame);
-        clockAnimationFrame = null;
-    }
-});

@@ -7,43 +7,26 @@ categories: ["blog", "coding"]
 draft: false
 ---
 
-March has been an exciting month for diving deeper into programming and planning some hardware projects. Here's what I've been working on and what's coming next.
+March has been a good mix of heads-down programming and daydreaming about hardware projects. Here's what I've been up to and what's coming next.
 
-## Programming Challenges with CSES
+## Grinding CSES problems
 
-I've been spending considerable time working through problems on the [CSES Problem Set](https://cses.fi/problemset/), and it's been incredibly rewarding. For those unfamiliar, CSES is a collection of competitive programming problems that really test your algorithmic thinking.
+I've been putting a lot of time into the [CSES Problem Set](https://cses.fi/problemset/) lately, and I'm really enjoying it. If you haven't run into it, CSES is a big collection of competitive programming problems that genuinely make you think about *how* you're solving something, not just whether it works.
 
-### Rediscovering C++
+### Back on C++
 
-While I've used **C++** in the past for console applications, tackling these algorithmic challenges has rekindled my appreciation for the language. There's something satisfying about the performance and control that C++ offers when solving complex problems. The language forces you to think carefully about memory management and efficiency—skills that are invaluable in competitive programming.
+I've used C++ before for console apps, but working through these problems has reminded me why I like it. There's something satisfying about the speed and control you get, and the language doesn't let you get lazy. You actually have to think about memory and efficiency, and that mindset carries over to everything else I write.
 
-### What I'm Learning
+The problems cover a good spread: dynamic programming, graph algorithms, data structures, and a fair bit of math like number theory and combinatorics. Each category has forced me to slow down and really understand what I'm doing.
 
-The CSES problems cover a wide range of topics:
-- **Dynamic Programming** - Breaking down complex problems into simpler subproblems
-- **Graph Algorithms** - Exploring connections and pathfinding
-- **Data Structures** - Optimizing data access and manipulation
-- **Mathematical Concepts** - Number theory and combinatorics
+## Putting the Raspberry Pi to work
 
-## Raspberry Pi Server Plans
+I've got a Raspberry Pi 4 Model B (2GB) that's been collecting dust for way too long, and I finally want to do something with it. A few ideas I'm kicking around:
 
-I have a **Raspberry Pi 4 Model B (2GB)** that's been sitting idle for too long, and I'm finally ready to put it to good use. I'm considering several potential projects:
+- A media server with Plex or Jellyfin to stream my library around the house, since the Pi 4 should handle transcoding for a couple of devices at once
+- A small home monitoring setup for network status, temperature and humidity, camera feeds, and general system stats
+- A lightweight dev server for testing web projects before they go to production
 
-### Media Server
-Setting up a **Plex** or **Jellyfin** server to stream my media collection throughout the house. The Pi 4 should have enough power to handle transcoding for a few devices simultaneously.
+## Next up
 
-### Home Monitoring  
-Creating a monitoring system to keep track of:
-- Network device status
-- Temperature and humidity sensors
-- Home security camera feeds
-- System performance metrics
-
-### Development Server
-Using it as a lightweight development environment for web projects and testing deployments before pushing to production.
-
-## Next Steps
-
-I'm planning to document whatever path I choose for the Raspberry Pi project. Whether it ends up being a media server, monitoring system, or something else entirely, I'll share the setup process, challenges, and solutions I discover along the way.
-
-The combination of sharpening my programming skills with CSES and getting hands-on with hardware projects feels like the perfect balance of theoretical and practical learning.
+Whatever I land on, I'll document the whole thing here: the setup, what breaks, and how I fix it. Sharpening the algorithm side with CSES while getting my hands dirty with the Pi feels like a nice balance of theory and actually building something.
