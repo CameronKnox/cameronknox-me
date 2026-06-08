@@ -121,16 +121,16 @@
     {{ block "head" . }}{{ end }}
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <div class="header-left">
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="/" class="brand">
                     <!-- Analog Clock -->
                     <div class="analog-clock">
                         <svg width="60" height="60" viewBox="0 0 60 60" class="clock-svg" role="img" aria-label="Analog clock showing current time">
                             <!-- Clock face -->
                             <circle cx="30" cy="30" r="28" fill="none" stroke="var(--color-border)" stroke-width="2"/>
-                            
+
                             <!-- Hour markers -->
                             <g class="hour-markers">
                                 <line x1="30" y1="4" x2="30" y2="8" stroke="var(--color-text)" stroke-width="2" transform="rotate(0 30 30)"/>
@@ -146,58 +146,51 @@
                                 <line x1="30" y1="4" x2="30" y2="8" stroke="var(--color-text)" stroke-width="2" transform="rotate(300 30 30)"/>
                                 <line x1="30" y1="4" x2="30" y2="8" stroke="var(--color-text)" stroke-width="2" transform="rotate(330 30 30)"/>
                             </g>
-                            
+
                             <!-- Clock hands -->
                             <line id="hour-hand" x1="30" y1="30" x2="30" y2="18" stroke="var(--color-text)" stroke-width="3" stroke-linecap="round"/>
                             <line id="minute-hand" x1="30" y1="30" x2="30" y2="12" stroke="var(--color-text)" stroke-width="2" stroke-linecap="round"/>
                             <line id="second-hand" x1="30" y1="30" x2="30" y2="10" stroke="var(--color-accent)" stroke-width="1" stroke-linecap="round"/>
-                            
+
                             <!-- Center dot -->
                             <circle cx="30" cy="30" r="2" fill="var(--color-text)"/>
                         </svg>
                     </div>
-                    
-                    <a href="/" class="site-title">{{ .Site.Title }}</a>
-                </div>
-                
-                <div class="header-right">
-                    <nav>
-                        <ul>
-                            {{ $cur := .RelPermalink | strings.TrimSuffix "/" }}
-                            {{ range .Site.Menus.main }}
-                            {{ $menuURL := .URL | relLangURL | strings.TrimSuffix "/" }}
-                            {{ $active := or (eq $cur $menuURL) (and (ne $menuURL "") (hasPrefix (printf "%s/" $cur) (printf "%s/" $menuURL))) }}
-                            <li><a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
-                            {{ end }}
-                        </ul>
-                    </nav>
-                    <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
-                        <!-- Moon icon (default) -->
-                        <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
-                        </svg>
-                        <!-- Sun icon (hidden by default) -->
-                        <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
-                            <circle cx="12" cy="12" r="5" fill="currentColor"/>
-                            <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </button>
-                </div>
+
+                    <span class="site-title">{{ .Site.Title }}</span>
+                </a>
+
+                <nav>
+                    <ul>
+                        {{ $cur := .RelPermalink | strings.TrimSuffix "/" }}
+                        {{ range .Site.Menus.main }}
+                        {{ $menuURL := .URL | relLangURL | strings.TrimSuffix "/" }}
+                        {{ $active := or (eq $cur $menuURL) (and (ne $menuURL "") (hasPrefix (printf "%s/" $cur) (printf "%s/" $menuURL))) }}
+                        <li><a href="{{ .URL }}"{{ if $active }} class="active" aria-current="page"{{ end }}>{{ .Name }}</a></li>
+                        {{ end }}
+                    </ul>
+                </nav>
             </div>
-        </header>
-        
-        {{ block "main" . }}{{ end }}
-        
-        <footer>
-            <div class="footer-content">
-                <p>{{ .Site.Copyright }}</p>
+
+            <div class="sidebar-bottom">
+                <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
+                    <!-- Moon icon (default) -->
+                    <svg class="theme-icon moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                    </svg>
+                    <!-- Sun icon (hidden by default) -->
+                    <svg class="theme-icon sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                        <circle cx="12" cy="12" r="5" fill="currentColor"/>
+                        <line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </button>
                 <div class="social-links">
                     <a href="https://github.com/CameronKnox" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="View my GitHub profile">
                         <svg class="social-icon github-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,8 +198,13 @@
                         </svg>
                     </a>
                 </div>
+                <p class="copyright">{{ .Site.Copyright }}</p>
             </div>
-        </footer>
+        </aside>
+
+        <div class="content-wrap">
+            {{ block "main" . }}{{ end }}
+        </div>
     </div>
 </body>
 </html>
