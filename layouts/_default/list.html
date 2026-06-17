@@ -1,9 +1,8 @@
 {{ define "main" }}
-<main>
     <h1>{{ .Title }}</h1>
-    
+
     {{ .Content }}
-    
+
     <div class="post-list">
         {{ range .Pages }}
         <article class="post-item">
@@ -29,5 +28,4 @@
         </article>
         {{ end }}
     </div>
-</main>
 {{ end }}

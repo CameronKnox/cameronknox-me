@@ -1,52 +1,58 @@
 ---
 title: "About"
 date: 2025-08-11T16:20:00-05:00
-description: "Learn more about Cameron Knox - developer, tech enthusiast, and blogger."
+description: "Learn more about Cameron Knox - full stack developer, outdoorsman, and tech enthusiast."
 draft: false
 ---
 
 # About Me
 
-Hey there! I'm Cameron Knox, a developer and tech enthusiast who loves exploring new technologies and sharing what I learn along the way.
+Hey there! I'm Cameron Knox, a full stack developer, outdoorsman, and tech enthusiast. I like building things with code, getting outside when I can, and sharing what I learn along the way.
 
 ## What I Do
 
-I'm passionate about building things with code and constantly learning new technologies. Currently, I'm working on various projects including:
+I'm always building something and picking up new tools as I go. Lately that has looked like:
 
-- **Web Development**: Building modern web applications with React and other frameworks
-- **Programming Challenges**: Solving problems on platforms like [CSES](https://cses.fi/problemset/)
-- **Hardware Projects**: Experimenting with my Raspberry Pi 4 for server projects and automation
+- **Full-Stack Web Development**: Building web apps with React, TypeScript, and JavaScript on top of PostgreSQL
+- **Product & Client Work**: Shipping dashboards, tools, and websites for real, ongoing projects
+- **Systems Programming**: Reaching for Rust when I want something fast and reliable
+- **Hardware Projects**: Using my Raspberry Pi 4 for home server projects and automation
 
 ## Current Interests
 
-- **AI & Machine Learning**: Testing new models and exploring AI-powered development tools
-- **3D Printing**: Creating useful items with my Bambu Lab A1 printer
-- **System Administration**: Setting up media servers and device monitoring
-- **Open Source**: Contributing to projects and sharing code
+- **TypeScript**: Leaning on it for most of my recent web work
+- **Rust**: Building fast, dependable tools with it
+- **AI & Dev Tools**: Testing new models and building with tools like Claude Code
+- **3D Printing**: Making useful things on my Bambu Lab A1
+- **The Outdoors**: Stepping away from the screen whenever I get the chance
 
 ## Tech Stack
 
 Some of the technologies I work with:
 
-- **Languages**: C++, JavaScript, Python
+- **Languages**: TypeScript, JavaScript, Rust, SQL
 - **Frameworks**: React, Hugo (this blog!)
+- **Databases**: PostgreSQL
 - **Tools**: Git, VS Code, Claude Code
-- **Hardware**: Apple ecosystem, Raspberry Pi, 3D printers
+- **Hardware**: Apple ecosystem, Raspberry Pi, Bambu Lab A1
 
 ## This Blog
 
-I created this blog to document my projects, share interesting discoveries, and connect with other developers and tech enthusiasts. You'll find posts about:
+I started this blog to document my projects, think out loud, and connect with other developers and tech enthusiasts. You'll find posts about:
 
-- Programming tutorials and challenges
-- Tech setup and hardware reviews  
-- Project updates and learnings
-- AI and development tool experiences
+- Buy it for life gear and reviews of products built to last
+- Side projects and what I'm building (TypeScript, Rust, web apps)
+- Tech setups and hardware, from the Raspberry Pi to 3D printing to Apple gear
+- Honest takes on tech and streaming
+- AI and development tools like Claude Code
+- The occasional lifestyle post, like city versus suburb living
 
 ## Connect
 
 Feel free to reach out or follow my work:
 
 - **GitHub**: [@CameronKnox](https://github.com/CameronKnox)
+- **LinkedIn**: [cameron-knox13](https://www.linkedin.com/in/cameron-knox13/)
 - **Website**: [cameronknox.io](https://cameronknox.io)
 
 Thanks for stopping by! I hope you find something useful or interesting in my posts.

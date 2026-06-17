@@ -18,8 +18,8 @@ if (-not $Title) {
 $Filename = $Title.ToLower() -replace '[^a-z0-9\s]', '' -replace '\s+', '_'
 $PostFile = "content\posts\$Filename.md"
 
-# Get current date and time
-$CurrentDate = Get-Date -Format "yyyy-MM-ddTHH:mm:ss-05:00"
+# Get current local date and time with RFC 3339 offset
+$CurrentDate = Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz"
 
 # Format tags and categories for YAML
 $TagsFormatted = if ($Tags) { 

@@ -1,7 +1,7 @@
 ---
 title: "Living in the city vs. the suburbs"
 date: 2026-04-29T16:52:24-04:00
-description: ""
+description: "A personal comparison of city life and suburban space after moving from Horsham to the Philadelphia area."
 tags: ["lifestyle", "city-living", "suburbs", "philadelphia"]
 categories: ["lifestyle"]
 draft: false

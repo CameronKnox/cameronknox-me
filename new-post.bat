@@ -32,15 +32,8 @@ call :toLower FILENAME
 
 set "POST_FILE=content\posts\%FILENAME%.md"
 
-REM Get current date and time (Windows format)
-for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
-set "YYYY=%dt:~0,4%"
-set "MM=%dt:~4,2%"
-set "DD=%dt:~6,2%"
-set "HH=%dt:~8,2%"
-set "Min=%dt:~10,2%"
-set "Sec=%dt:~12,2%"
-set "CURRENT_DATE=%YYYY%-%MM%-%DD%T%HH%:%Min%:%Sec%-05:00"
+REM Get current local date and time with RFC 3339 offset
+for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'"`) do set "CURRENT_DATE=%%a"
 
 REM Create the post file with professional formatting
 (

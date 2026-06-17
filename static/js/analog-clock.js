@@ -1,121 +1,72 @@
 // ================================
-// Fully Smooth Local-Time Clock
+// Smooth local-time analog clock(s)
+// Supports any number of .analog-clock instances on the page.
 // ================================
-let clockAnimationFrame = null;
-let clockElements = null;
+let clockFrame = null;
+let clocks = [];
 
-// Cache clock elements for better performance
-function getCacheClockElements() {
-    if (!clockElements) {
-        clockElements = {
-            hour: document.getElementById('hour-hand'),
-            minute: document.getElementById('minute-hand'),
-            second: document.getElementById('second-hand')
-        };
-    }
-    return clockElements;
+function collectClocks() {
+    clocks = Array.from(document.querySelectorAll('.analog-clock'))
+        .map((el) => ({
+            hour: el.querySelector('.hand-hour'),
+            minute: el.querySelector('.hand-minute'),
+            second: el.querySelector('.hand-second'),
+        }))
+        .filter((c) => c.hour && c.minute && c.second);
+
+    // Disable transitions and lock transform origin for crisp, jump-free motion
+    clocks.forEach((c) => {
+        [c.hour, c.minute, c.second].forEach((hand) => {
+            hand.style.transition = 'none';
+            hand.style.transformOrigin = '30px 30px';
+        });
+    });
 }
 
-// Set initial position without animation to prevent stutter
-function setInitialPosition() {
-    const elements = getCacheClockElements();
-    if (!elements.hour || !elements.minute || !elements.second) return;
-
-    // Ensure no transitions during initial positioning
-    elements.hour.style.transition = 'none';
-    elements.minute.style.transition = 'none';
-    elements.second.style.transition = 'none';
-
-    // Set transform origin explicitly
-    elements.hour.style.transformOrigin = '30px 30px';
-    elements.minute.style.transformOrigin = '30px 30px';
-    elements.second.style.transformOrigin = '30px 30px';
-
-    // Set initial time immediately
-    const time = new Date();
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
-    const milliseconds = time.getMilliseconds();
-
-    const smoothSeconds = seconds + milliseconds / 1000;
-    const smoothMinutes = minutes + smoothSeconds / 60;
-    const smoothHours = (hours % 12) + smoothMinutes / 60;
+function renderClocks() {
+    const t = new Date();
+    const smoothSeconds = t.getSeconds() + t.getMilliseconds() / 1000;
+    const smoothMinutes = t.getMinutes() + smoothSeconds / 60;
+    const smoothHours = (t.getHours() % 12) + smoothMinutes / 60;
 
     const secondAngle = smoothSeconds * 6;
     const minuteAngle = smoothMinutes * 6;
     const hourAngle = smoothHours * 30;
 
-    elements.hour.style.transform = `rotate(${hourAngle}deg)`;
-    elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
-    elements.second.style.transform = `rotate(${secondAngle}deg)`;
+    clocks.forEach((c) => {
+        c.hour.style.transform = `rotate(${hourAngle}deg)`;
+        c.minute.style.transform = `rotate(${minuteAngle}deg)`;
+        c.second.style.transform = `rotate(${secondAngle}deg)`;
+    });
 
-    // Force reflow to ensure transforms are applied before animation starts
-    void elements.hour.offsetHeight;
+    clockFrame = requestAnimationFrame(renderClocks);
 }
 
-// Update analog and digital clock
-function updateClock() {
-    const time = new Date();
-    const hours = time.getHours();
-    const minutes = time.getMinutes();
-    const seconds = time.getSeconds();
-    const milliseconds = time.getMilliseconds();
-
-    // Smooth calculations
-    const smoothSeconds = seconds + milliseconds / 1000;
-    const smoothMinutes = minutes + smoothSeconds / 60;
-    const smoothHours = (hours % 12) + smoothMinutes / 60;
-
-    // Angles
-    const secondAngle = smoothSeconds * 6;
-    const minuteAngle = smoothMinutes * 6;
-    const hourAngle = smoothHours * 30;
-
-    // Apply transforms
-    const elements = getCacheClockElements();
-    if (elements.hour && elements.minute && elements.second) {
-        elements.hour.style.transform = `rotate(${hourAngle}deg)`;
-        elements.minute.style.transform = `rotate(${minuteAngle}deg)`;
-        elements.second.style.transform = `rotate(${secondAngle}deg)`;
+function startClocks() {
+    if (clockFrame) {
+        cancelAnimationFrame(clockFrame);
+        clockFrame = null;
     }
-
-    clockAnimationFrame = requestAnimationFrame(updateClock);
-}
-
-function initializeClock() {
-    // Cancel any existing animation
-    if (clockAnimationFrame) {
-        cancelAnimationFrame(clockAnimationFrame);
-        clockAnimationFrame = null;
+    collectClocks();
+    if (clocks.length) {
+        renderClocks();
     }
-
-    // Reset cache
-    clockElements = null;
-
-    // Set initial position immediately to prevent jump/stutter
-    setInitialPosition();
-
-    // Start animation
-    clockAnimationFrame = requestAnimationFrame(updateClock);
 }
 
-// Start clock when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeClock);
+    document.addEventListener('DOMContentLoaded', startClocks);
 } else {
-    // DOM already loaded, initialize immediately
-    initializeClock();
+    startClocks();
 }
 
-// Stop when hidden, resume when visible
+// Pause when hidden, resume when visible
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        if (clockAnimationFrame) {
-            cancelAnimationFrame(clockAnimationFrame);
-            clockAnimationFrame = null;
+        if (clockFrame) {
+            cancelAnimationFrame(clockFrame);
+            clockFrame = null;
         }
     } else {
-        initializeClock();
+        startClocks();
     }
 });

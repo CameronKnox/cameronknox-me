@@ -1,7 +1,7 @@
 ---
 title: "Buy it for life duffel bag and weekend travel backpack"
 date: 2026-04-25T16:05:00-04:00
-description: ""
+description: "A practical look at two durable travel bags: the Aer Travel Pack 3 X-Pac and a 50L waterproof YETI duffel."
 tags: ["buy-it-for-life", "travel", "backpack", "duffel-bag", "gear"]
 categories: []
 draft: false

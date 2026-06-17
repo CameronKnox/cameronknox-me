@@ -1,7 +1,7 @@
 ---
 title: "Buying Items for Life"
 date: 2026-02-10T15:00:56-05:00
-description: ""
+description: "Why I prefer buying durable gear once, how I research long-lasting items, and where quality is actually worth paying for."
 tags: ["buy-it-for-life", "quality", "gear"]
 categories: ["lifestyle"]
 draft: false

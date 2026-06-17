@@ -1,8 +1,7 @@
 {{ define "main" }}
-<main>
     <h1>Posts tagged "{{ .Title }}"</h1>
     <p class="post-meta">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }} with this tag</p>
-    
+
     <div class="post-list">
         {{ range .Pages }}
         <article class="post-item">
@@ -28,5 +27,4 @@
         </article>
         {{ end }}
     </div>
-</main>
 {{ end }}

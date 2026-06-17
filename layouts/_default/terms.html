@@ -1,8 +1,7 @@
 {{ define "main" }}
-<main>
     <h1>{{ .Title }}</h1>
     <p class="post-meta">All {{ lower .Title }} used on this blog</p>
-    
+
     <div class="terms-list">
         {{ range .Pages }}
         <a href="{{ .Permalink }}" class="term-item">
@@ -11,5 +10,4 @@
         </a>
         {{ end }}
     </div>
-</main>
 {{ end }}

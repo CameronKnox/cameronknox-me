@@ -18,8 +18,9 @@ TAGS="${3:-}"
 FILENAME=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | tr ' ' '_')
 POST_FILE="content/posts/${FILENAME}.md"
 
-# Get current date and time
-CURRENT_DATE=$(date -u +"%Y-%m-%dT%H:%M:%S-05:00")
+# Get current local date and time with RFC 3339 offset
+CURRENT_DATE=$(date +"%Y-%m-%dT%H:%M:%S%z")
+CURRENT_DATE="${CURRENT_DATE:0:${#CURRENT_DATE}-2}:${CURRENT_DATE: -2}"
 
 # Create the post file with professional formatting
 cat > "$POST_FILE" << EOF
