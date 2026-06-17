@@ -7,7 +7,7 @@ draft: false
 
 # About Me
 
-Hey there! I'm Cameron Knox, a full stack developer, outdoorsman, and tech enthusiast. I like building things with code, getting outside when I can, and sharing what I learn along the way.
+Hey there! I'm Cam, a full stack developer, outdoorsman, and tech enthusiast. I like building things with code, getting outside when I can, and sharing what I learn along the way.
 
 ## What I Do
 
@@ -31,7 +31,7 @@ I'm always building something and picking up new tools as I go. Lately that has 
 Some of the technologies I work with:
 
 - **Languages**: TypeScript, JavaScript, Rust, SQL
-- **Frameworks**: React, Hugo (this blog!)
+- **Frameworks**: React, Hugo
 - **Databases**: PostgreSQL
 - **Tools**: Git, VS Code, Claude Code
 - **Hardware**: Apple ecosystem, Raspberry Pi, Bambu Lab A1
@@ -40,12 +40,12 @@ Some of the technologies I work with:
 
 I started this blog to document my projects, think out loud, and connect with other developers and tech enthusiasts. You'll find posts about:
 
-- Buy it for life gear and reviews of products built to last
-- Side projects and what I'm building (TypeScript, Rust, web apps)
-- Tech setups and hardware, from the Raspberry Pi to 3D printing to Apple gear
-- Honest takes on tech and streaming
-- AI and development tools like Claude Code
-- The occasional lifestyle post, like city versus suburb living
+- Gear reviews of products
+- Side projects and what I'm building
+- Tech setups and hardware
+- Honest takes on tech
+- AI and development tools
+- The occasional lifestyle post
 
 ## Connect
 
