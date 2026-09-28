@@ -1,0 +1,26 @@
+{{- /* Post card used by the homepage, list, and taxonomy pages.
+     Context: dict "page" (the post) "level" (heading tag) "current" (RelPermalink of the listing page, for active tag). */ -}}
+{{- $p := .page -}}
+{{- $h := .level | default "h2" -}}
+<article class="post-item">
+    {{- /* html/template escapes a dynamic tag name, so branch on the level */}}
+    {{ if eq $h "h3" }}
+    <h3 class="post-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h3>
+    {{ else }}
+    <h2 class="post-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    {{ end }}
+    <div class="post-meta">
+        <time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date.Format "Jan 2, 2006" }}</time>
+        • {{ $p.ReadingTime }} min read
+    </div>
+    {{ with $p.Description }}
+    <p class="post-description">{{ . }}</p>
+    {{ end }}
+    {{ with $p.GetTerms "tags" }}
+    <div class="tags">
+        {{ range . }}
+        <a href="{{ .RelPermalink }}" class="tag{{ if eq .RelPermalink $.current }} active{{ end }}">{{ .LinkTitle | lower }}</a>
+        {{ end }}
+    </div>
+    {{ end }}
+</article>

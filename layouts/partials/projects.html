@@ -1,0 +1,11 @@
+{{- /* Project cards from data/projects.toml. Used on the homepage and, via the
+     projects shortcode, on the About page. */ -}}
+<div class="project-grid">
+    {{ range hugo.Data.projects.projects }}
+    <a class="project-card" href="{{ .url }}" target="_blank" rel="noopener noreferrer">
+        <span class="project-name">{{ .name }} <span class="project-arrow" aria-hidden="true">↗</span></span>
+        <span class="project-domain">{{ .url | replaceRE `^https?://(www\.)?` "" | strings.TrimSuffix "/" }}</span>
+        {{ with .description }}<span class="project-description">{{ . }}</span>{{ end }}
+    </a>
+    {{ end }}
+</div>

@@ -9,9 +9,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a personal tech blog built with Hugo static site generator. The site features:
-- Custom theme with light/dark mode toggle
-- Analog clock in the header
-- Terminal/PowerShell aesthetic using monospace fonts (Cascadia Code, Consolas)
+- Custom light-only minimal theme
+- Analog clock in the header and homepage hero
+- Monospace aesthetic using self-hosted JetBrains Mono
 - Tag and category taxonomy for blog posts
 - Responsive design with custom CSS
 
@@ -52,54 +52,41 @@ These scripts create posts in `content/posts/` with proper frontmatter and templ
 
 ## Architecture
 
-### Theme System
+### Theme
 
-**Critical: Preventing Theme Flash (FOUC)**
-- Theme initialization happens in TWO places and must remain synchronized:
-  1. Inline `<script>` in `layouts/_default/baseof.html:33-76` - runs immediately before DOM renders
-  2. `static/js/theme-toggle.js` - handles theme toggling after page load
-- The inline script applies theme BEFORE first paint to prevent flash
-- Uses `.no-transitions` class during initialization to disable transitions
-- Theme preference stored in `localStorage` with key `'theme-preference'`
-- Falls back to system preference (`prefers-color-scheme`) if no stored preference
-- CSS variables defined in `static/css/main.css` for both `[data-theme="light"]` and `[data-theme="dark"]`
-
-**When modifying theme:**
-- Keep inline script and theme-toggle.js logic synchronized
-- Never remove the inline theme initialization script
-- Test tab navigation and page reloads to ensure no flash occurs
+- Light-only; colors are CSS custom properties on `:root` in `static/css/main.css`
+- JetBrains Mono is self-hosted from `static/fonts/` and preloaded in `baseof.html`
 
 ### Clock System
 
-The analog clock in the header is powered by `static/js/analog-clock.js`:
-- Uses `requestAnimationFrame` for smooth 60fps animation
-- Calculates smooth hand positions using milliseconds (no "ticking" second hand)
-- Handles visibility changes - stops when tab is hidden, resumes when visible
-- Sets initial position without animation to prevent stuttering on page load
-- Clock SVG defined inline in `layouts/_default/baseof.html:98-127`
-- All clock elements use cached references for performance
-
-**When modifying clock:**
-- Initial positioning must happen immediately without transitions to prevent stutter
-- Visibility change handlers prevent unnecessary animation when tab is inactive
+The analog clocks (header and homepage hero) are driven by CSS animations, with `static/js/analog-clock.js` only syncing them:
+- Each hand runs an infinite linear `clock-spin` animation (60s / 3600s / 43200s) defined in `static/css/main.css`
+- JS sets a negative `animation-delay` per hand from the current time, so there is no per-frame JavaScript
+- Hands stay hidden (`.analog-clock:not(.is-ready)`) until JS positions them, which prevents a flash at 12:00
+- Resyncs every minute, on tab focus, and on back/forward cache restore (covers DST, sleep/wake)
+- Under `prefers-reduced-motion`, the second hand ticks with `steps(60)`; the global reduced-motion rule excludes `.hand`
+- Clock SVG lives in `layouts/partials/clock.html` (takes a size class: `clock-sm` or `clock-lg`)
+- Script is loaded with `defer`
 
 ### Template Structure
 
 Hugo templates use Go's template syntax:
 
-- **`layouts/_default/baseof.html`** - Base template for all pages, includes:
-  - Theme initialization script
-  - Header with clock and navigation
-  - Footer with social links
-  - All global CSS/JS includes
+- **`layouts/_default/baseof.html`** - Base template for all pages: head/SEO meta, top bar with nav and clock, footer
 
-- **`layouts/index.html`** - Homepage, shows 10 most recent posts from `/posts` section
+- **`layouts/index.html`** - Homepage hero plus the 10 most recent posts ("All posts" link appears past 10)
 
-- **`layouts/_default/single.html`** - Individual post/page template
+- **`layouts/partials/post-item.html`** - Shared post card used by every list page; edit this instead of duplicating markup
+
+- **`layouts/_default/single.html`** - Individual post/page template (date, reading time and prev/next only render for the `posts` section)
 
 - **`layouts/_default/list.html`** - List pages (e.g., all posts)
 
+- **`layouts/_default/terms.html`** - Tags/categories index, rendered as pills sorted by post count
+
 - **`layouts/taxonomy/*.html`** - Tag and category archive pages
+
+- **`data/projects.toml`** - Work/projects list (name, url, optional description). Rendered by `layouts/partials/projects.html` on the homepage "Work" section and on About via the `{{< projects >}}` shortcode; edit projects here only
 
 - **`archetypes/default.md`** - Basic frontmatter template (simple TOML format)
 
@@ -119,34 +106,34 @@ draft: false
 ```
 
 - Posts use Markdown with Goldmark renderer
-- `unsafe = true` in config allows raw HTML in Markdown
-- Syntax highlighting uses monokai theme (configured in `hugo.toml`)
+- `unsafe = false`, so raw HTML in Markdown is stripped
+- Syntax highlighting uses the light `github` style (configured in `hugo.toml`)
 
 ### Configuration
 
 **`hugo.toml`** contains:
 - Base URL: `https://cameronknox.io/`
-- Menu definitions (Home, All posts, About, Tags)
-- Social links (GitHub)
+- Menu definitions (Home, About, Tags)
+- `[params]` site description and avatar (used for meta description and og:image)
 - Markdown/syntax highlighting settings
-- `buildFuture = true` - publishes posts with future dates
+- `buildFuture = false` - future-dated posts are not published
 
 ### Static Assets
 
 - **CSS:** `static/css/main.css` - Single CSS file with all styles
   - CSS custom properties for theming
+  - Layout widths: `--content-width` (960px, homepage and lists, top bar matches it) and `--reading-width` (720px, applied via `.content-narrow` to posts and standalone pages)
   - Monospace font stack throughout
 
-- **JavaScript:**
-  - `static/js/theme-toggle.js` - Theme switching logic
-  - `static/js/analog-clock.js` - Clock animation
+- **JavaScript:** `static/js/analog-clock.js` - Clock animation
+
+- **`static/_headers`** - Security headers/CSP for the host; add any new third-party image or script origin here
 
 - **Favicon:** `static/favicon.ico`
 
 ## Important Notes
 
-- The site uses monospace fonts exclusively (Cascadia Code, Consolas fallbacks) for terminal aesthetic
-- All interactive features (clock, theme toggle) use vanilla JavaScript - no frameworks
-- Theme system requires coordination between inline script and external JS
+- The site uses monospace fonts exclusively (JetBrains Mono, with Cascadia Code/Consolas fallbacks)
+- The clock is the only JavaScript, vanilla with no frameworks
 - Posts are stored with underscored filenames (e.g., `first_blog_post.md`)
 - The `public/` directory is the build output and should not be edited directly

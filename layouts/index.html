@@ -1,6 +1,7 @@
 {{ define "main" }}
 <section class="hero">
     <a href="/" class="hero-clock" aria-label="Home">{{ partial "clock.html" "clock-lg" }}</a>
+    <time class="hero-date" data-clock-date></time>
     <h1 class="hero-name">Cameron Knox</h1>
     <p class="hero-tagline">Full Stack Developer, Outdoorsman, and Tech Enthusiast.</p>
 
@@ -27,36 +28,25 @@
     </div>
 
     <a class="hero-heatmap" href="https://github.com/CameronKnox" target="_blank" rel="noopener noreferrer" aria-label="View GitHub contribution activity">
-        <img src="https://ghchart.rshah.org/CameronKnox" alt="CameronKnox GitHub contribution graph for the past year" loading="lazy">
+        <img src="https://ghchart.rshah.org/CameronKnox" width="663" height="104" alt="CameronKnox GitHub contribution graph for the past year" loading="lazy">
     </a>
+</section>
+
+<section class="work">
+    <h2 class="section-label">Work</h2>
+    {{ partial "projects.html" . }}
 </section>
 
 <section class="writing">
     <h2 class="section-label">Writing</h2>
+    {{ $posts := where .Site.RegularPages "Section" "posts" }}
     <div class="post-list">
-        {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-        <article class="post-item">
-            <h3 class="post-title">
-                <a href="{{ .Permalink }}">{{ .Title }}</a>
-            </h3>
-            <div class="post-meta">
-                {{ .Date.Format "Jan 2, 2006" }}
-                {{ if .Params.tags }}
-                • {{ len .Params.tags }} tags
-                {{ end }}
-            </div>
-            {{ if .Description }}
-            <p class="post-description">{{ .Description }}</p>
-            {{ end }}
-            {{ if .Params.tags }}
-            <div class="tags">
-                {{ range .Params.tags }}
-                <a href="/tags/{{ . | urlize }}" class="tag">{{ . | lower }}</a>
-                {{ end }}
-            </div>
-            {{ end }}
-        </article>
+        {{ range first 10 $posts }}
+        {{ partial "post-item.html" (dict "page" . "level" "h3") }}
         {{ end }}
     </div>
+    {{ if gt (len $posts) 10 }}
+    <p class="all-posts"><a href="/posts/">All {{ len $posts }} posts →</a></p>
+    {{ end }}
 </section>
 {{ end }}

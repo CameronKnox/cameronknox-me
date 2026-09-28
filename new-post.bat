@@ -43,7 +43,7 @@ echo date: %CURRENT_DATE%
 echo description: ""
 echo tags: [%TAGS:"="%]
 echo categories: [%CATEGORIES:"="%]
-echo draft: false
+echo draft: true
 echo ---
 echo.
 echo Your opening paragraph goes here. This should be a compelling introduction that hooks the reader and clearly explains what this post is about.
@@ -98,8 +98,8 @@ echo 🏷️  Tags: %TAGS%
 echo.
 echo Next steps:
 echo 1. Edit the post: code %POST_FILE%
-echo 2. Add a description in the frontmatter
-echo 3. Build and preview: hugo server
+echo 2. Add a description in the frontmatter, and set draft: false when it is ready to publish
+echo 3. Preview (drafts included): hugo server -D
 echo 4. Build for production: hugo
 
 goto :eof

@@ -5,9 +5,11 @@ description: "Learn more about Cameron Knox - full stack developer, outdoorsman,
 draft: false
 ---
 
-# About Me
-
 Hey there! I'm Cam, a full stack developer, outdoorsman, and tech enthusiast. I like building things with code, getting outside when I can, and sharing what I learn along the way.
+
+## Things I've Built
+
+{{< projects >}}
 
 ## What I Do
 

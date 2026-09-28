@@ -1,0 +1,17 @@
+# Projects shown on the homepage "Work" section and the About page.
+# description is optional; cards without one show just the name and domain.
+
+[[projects]]
+name = "SportCut"
+url = "https://sportcut.com/"
+description = "Sports event management and video platform for clubs, teams, coaches, and players."
+
+[[projects]]
+name = "Pour Media Group"
+url = "https://pourmediagroup.com/"
+description = "Website and client portal for a media production company, where teams upload and stream their game film."
+
+[[projects]]
+name = "Towermen Lacrosse"
+url = "https://towermenlacrosse.com/"
+description = "Website and team management platform for a nationally ranked AA youth lacrosse club, with online billing."

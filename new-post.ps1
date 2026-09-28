@@ -38,7 +38,7 @@ date: $CurrentDate
 description: ""
 tags: [$TagsFormatted]
 categories: [$CategoriesFormatted]
-draft: false
+draft: true
 ---
 
 Your opening paragraph goes here. This should be a compelling introduction that hooks the reader and clearly explains what this post is about.
@@ -96,6 +96,6 @@ Write-Host "🏷️  Tags: $Tags" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Next steps:" -ForegroundColor Yellow
 Write-Host "1. Edit the post: code $PostFile"
-Write-Host "2. Add a description in the frontmatter"
-Write-Host "3. Build and preview: hugo server"
+Write-Host "2. Add a description in the frontmatter, and set draft: false when it is ready to publish"
+Write-Host "3. Preview (drafts included): hugo server -D"
 Write-Host "4. Build for production: hugo"

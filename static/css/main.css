@@ -43,7 +43,8 @@ img {
     --color-clock-second: #d23f31;
 
     --content-width: 960px;
-    --bar-width: 1040px;
+    --bar-width: var(--content-width);
+    --reading-width: 720px;
 }
 
 html {
@@ -79,7 +80,7 @@ body {
     max-width: var(--bar-width);
     margin: 0 auto;
     height: 56px;
-    padding: 0 clamp(1.25rem, 5vw, 2.5rem);
+    padding: 0 clamp(1.25rem, 5vw, 2rem);
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -164,9 +165,35 @@ body {
 .clock-sm .clock-svg { width: 34px; height: 34px; }
 .clock-lg .clock-svg { width: 116px; height: 116px; }
 
+.clock-face { fill: var(--color-bg); stroke: var(--color-border-strong); stroke-width: 1.5; }
+.clock-ticks line { stroke-linecap: round; }
+.tick-major { stroke: var(--color-text); stroke-width: 2; }
+.tick-minor { stroke: var(--color-text-muted); stroke-width: 1.2; }
+
+.hand { stroke-linecap: round; }
+.hand-hour { stroke: var(--color-text); stroke-width: 3.2; }
+.hand-minute { stroke: var(--color-text); stroke-width: 2; }
+.hand-second { stroke: var(--color-clock-second); stroke-width: 1; }
+.clock-pin { fill: var(--color-text); }
+.clock-pin-center { fill: var(--color-clock-second); }
+
+/* Hands spin via CSS; analog-clock.js sets a negative animation-delay on each
+   so they start at the current time, then adds .is-ready to reveal them. */
 .hand {
     transform-origin: 30px 30px;
-    transition: none;
+    animation: clock-spin linear infinite;
+}
+
+.hand-second { animation-duration: 60s; }
+.hand-minute { animation-duration: 3600s; }
+.hand-hour { animation-duration: 43200s; }
+
+/* Hide hands until positioned, so they never flash at 12:00 */
+.analog-clock:not(.is-ready) .hand { visibility: hidden; }
+
+@keyframes clock-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .topbar-clock:hover .clock-svg,
@@ -183,6 +210,9 @@ body {
     padding: 3.5rem clamp(1.25rem, 5vw, 2rem) 4rem;
 }
 
+/* Posts and standalone pages: ~72 characters per line for comfortable reading */
+.content-narrow { max-width: var(--reading-width); }
+
 /* ---------- Hero ---------- */
 .hero {
     text-align: center;
@@ -191,7 +221,19 @@ body {
 
 .hero-clock {
     display: inline-flex;
-    margin-bottom: 1.75rem;
+    margin-bottom: 0.9rem;
+}
+
+/* Filled in by analog-clock.js; min-height reserves the line so nothing shifts */
+.hero-date {
+    display: block;
+    min-height: 1.4em;
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
 }
 
 .hero-name {
@@ -276,6 +318,43 @@ body {
     border-bottom: 1px solid var(--color-border);
 }
 
+/* ---------- Work / projects ---------- */
+.work { margin-bottom: 3.5rem; }
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+}
+
+/* The About page's narrow column fits one card per row */
+.post-content .project-grid { grid-template-columns: 1fr; margin: 1.25rem 0 1.5rem; }
+
+.project-card,
+.post-content .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1.1rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.18s ease, transform 0.18s ease;
+}
+
+.project-card:hover,
+.post-content .project-card:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+    text-decoration: none;
+}
+
+.project-name { font-weight: 600; }
+.project-arrow { color: var(--color-text-muted); font-weight: 400; }
+.project-domain { font-size: 0.8rem; color: var(--color-text-muted); }
+.project-description { font-size: 0.85rem; line-height: 1.55; color: var(--color-text-muted); margin-top: 0.35rem; }
+
 /* ---------- Typography ---------- */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
@@ -334,6 +413,16 @@ pre code { background: none; padding: 0; font-size: 0.85rem; }
 }
 
 .post-item:last-child { border-bottom: none; }
+
+.all-posts {
+    margin: 1rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.88rem;
+}
+
+.all-posts a { color: var(--color-text-muted); }
+.all-posts a:hover { color: var(--color-text); }
 
 .post-title {
     font-size: 1.2rem;
@@ -445,39 +534,41 @@ pre code { background: none; padding: 0; font-size: 0.85rem; }
 }
 
 .post-navigation a {
-    color: var(--color-text-muted);
+    color: var(--color-text);
     padding: 0.75rem 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     transition: border-color 0.18s ease, color 0.18s ease;
-    flex: 1;
-    max-width: 48%;
+    flex: 0 1 48%;
 }
 
-.post-navigation a:hover { border-color: var(--color-border-strong); color: var(--color-text); text-decoration: none; }
-.nav-previous { text-align: left; margin-right: auto; }
+.post-navigation a:hover { border-color: var(--color-border-strong); text-decoration: none; }
+
+.nav-label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.post-content + .tags { margin-top: 2.5rem; }
+
+.nav-previous { text-align: left; }
 .nav-next { text-align: right; margin-left: auto; }
 
 /* Terms index */
 .terms-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
     margin-top: 2rem;
 }
 
-.term-item {
-    display: block;
-    padding: 1.5rem;
-    border: 1px solid var(--color-border);
-    border-radius: 12px;
-    color: var(--color-text);
-    transition: border-color 0.18s ease, transform 0.18s ease;
-}
-
-.term-item:hover { border-color: var(--color-border-strong); transform: translateY(-2px); text-decoration: none; }
-.term-item h3 { margin: 0 0 0.4rem; font-size: 1.1rem; }
-.term-item .post-meta { margin: 0; }
+.term-item { font-size: 0.85rem; padding: 0.45rem 0.95rem; gap: 0.5rem; }
+.term-count { opacity: 0.55; font-size: 0.9em; }
 
 /* 404 */
 .error-404 { text-align: center; padding: 4rem 1rem; }
@@ -526,10 +617,9 @@ pre code { background: none; padding: 0; font-size: 0.85rem; }
     .hero-links a { font-size: 0.82rem; }
 
     .post-item { padding: 1.5rem 0; }
-    .terms-list { grid-template-columns: 1fr; }
 
     .post-navigation { flex-direction: column; }
-    .post-navigation a { max-width: 100%; }
+    .post-navigation a { flex-basis: auto; }
     .nav-next { text-align: left; }
 }
 
@@ -553,8 +643,10 @@ pre code { background: none; padding: 0; font-size: 0.85rem; }
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    *, *::before, *::after {
+    *:not(.hand), *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
     }
+    /* Tick once per second instead of sweeping */
+    .hand-second { animation-timing-function: steps(60, end); }
 }

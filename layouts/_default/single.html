@@ -1,45 +1,46 @@
 {{ define "main" }}
+    {{ $isPost := eq .Section "posts" }}
     <article>
         <header>
             <h1>{{ .Title }}</h1>
+            {{ if $isPost }}
             <div class="post-meta">
-                {{ .Date.Format "January 2, 2006" }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
                 {{ if and .Lastmod (ne (.Lastmod.Format "2006-01-02") (.Date.Format "2006-01-02")) }}
                 • Updated {{ .Lastmod.Format "January 2, 2006" }}
                 {{ end }}
                 • {{ .ReadingTime }} min read
-                {{ if .Params.categories }}
-                • {{ range $index, $category := .Params.categories }}{{ if $index }}, {{ end }}<a href="/categories/{{ $category | urlize }}">{{ $category }}</a>{{ end }}
+                {{ with .GetTerms "categories" }}
+                • {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>{{ end }}
                 {{ end }}
             </div>
-            {{ if .Description }}
-            <p class="post-description"><em>{{ .Description }}</em></p>
+            {{ with .Description }}
+            <p class="post-description"><em>{{ . }}</em></p>
+            {{ end }}
             {{ end }}
         </header>
-        
+
         <div class="post-content">
             {{ .Content }}
         </div>
-        
-        {{ if .Params.tags }}
+
+        {{ with .GetTerms "tags" }}
         <div class="tags">
-            {{ range .Params.tags }}
-            <a href="/tags/{{ . | urlize }}" class="tag">{{ . | lower }}</a>
+            {{ range . }}
+            <a href="{{ .RelPermalink }}" class="tag">{{ .LinkTitle | lower }}</a>
             {{ end }}
         </div>
         {{ end }}
 
-        <nav class="post-navigation">
+        {{ if and $isPost (or .PrevInSection .NextInSection) }}
+        <nav class="post-navigation" aria-label="More posts">
             {{ with .PrevInSection }}
-            <div class="nav-previous">
-                <a href="{{ .Permalink }}" rel="prev">← {{ .Title }}</a>
-            </div>
+            <a class="nav-previous" href="{{ .RelPermalink }}" rel="prev"><span class="nav-label">← Older</span>{{ .Title }}</a>
             {{ end }}
             {{ with .NextInSection }}
-            <div class="nav-next">
-                <a href="{{ .Permalink }}" rel="next">{{ .Title }} →</a>
-            </div>
+            <a class="nav-next" href="{{ .RelPermalink }}" rel="next"><span class="nav-label">Newer →</span>{{ .Title }}</a>
             {{ end }}
         </nav>
+        {{ end }}
     </article>
 {{ end }}

@@ -1,11 +1,7 @@
 baseURL = 'https://cameronknox.io/'
 locale = 'en-US'
 title = "Cameron's Blog"
-copyright = "© CameronKnox"
-
-pygmentsstyle = "monokai"
-pygmentscodefences = true
-pygmentscodefencesguesssyntax = true
+copyright = "Cameron Knox"
 
 buildFuture = false
 
@@ -14,9 +10,13 @@ buildFuture = false
     [markup.goldmark.renderer]
       unsafe = false
   [markup.highlight]
-    style = "monokai"
+    style = "github"
     codeFences = true
     guessSyntax = true
+
+[params]
+  description = "Cameron Knox's blog: software, AI, travel, gear, and whatever else I'm into lately."
+  avatar = "https://avatars.githubusercontent.com/u/19205959?v=4&s=400"
 
 [[menu.main]]
 name = "Home"

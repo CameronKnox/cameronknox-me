@@ -1,12 +1,11 @@
 {{ define "main" }}
     <h1>{{ .Title }}</h1>
-    <p class="post-meta">All {{ lower .Title }} used on this blog</p>
+    <p class="post-meta">All {{ len .Data.Terms }} {{ lower .Title }} on this blog, most used first</p>
 
     <div class="terms-list">
-        {{ range .Pages }}
-        <a href="{{ .Permalink }}" class="term-item">
-            <h3>{{ .Title }}</h3>
-            <p class="post-meta">{{ len .Pages }} {{ if eq (len .Pages) 1 }}post{{ else }}posts{{ end }}</p>
+        {{ range .Data.Terms.ByCount }}
+        <a href="{{ .Page.RelPermalink }}" class="tag term-item">
+            {{ .Page.LinkTitle | lower }}<span class="term-count">{{ .Count }}</span>
         </a>
         {{ end }}
     </div>
