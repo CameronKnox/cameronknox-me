@@ -63,6 +63,7 @@ The analog clocks (header and homepage hero) are driven by CSS animations, with 
 - Each hand runs an infinite linear `clock-spin` animation (60s / 3600s / 43200s) defined in `static/css/main.css`
 - JS sets a negative `animation-delay` per hand from the current time, so there is no per-frame JavaScript
 - Hands stay hidden (`.analog-clock:not(.is-ready)`) until JS positions them, which prevents a flash at 12:00
+- With JavaScript disabled, a `<noscript>` style in `baseof.html` hides the clocks and the hero date entirely
 - Resyncs every minute, on tab focus, and on back/forward cache restore (covers DST, sleep/wake)
 - Under `prefers-reduced-motion`, the second hand ticks with `steps(60)`; the global reduced-motion rule excludes `.hand`
 - Clock SVG lives in `layouts/partials/clock.html` (takes a size class: `clock-sm` or `clock-lg`)
@@ -88,7 +89,7 @@ Hugo templates use Go's template syntax:
 
 - **`data/projects.toml`** - Work/projects list (name, url, optional description). Rendered by `layouts/partials/projects.html` on the homepage "Work" section and on About via the `{{< projects >}}` shortcode; edit projects here only
 
-- **`archetypes/default.md`** - Basic frontmatter template (simple TOML format)
+- **`archetypes/default.md`** - Basic frontmatter template (YAML)
 
 ### Content Structure
 
@@ -113,7 +114,7 @@ draft: false
 
 **`hugo.toml`** contains:
 - Base URL: `https://cameronknox.io/`
-- Menu definitions (Home, About, Tags)
+- Menu definitions (Home, Posts, About, Tags)
 - `[params]` site description and avatar (used for meta description and og:image)
 - Markdown/syntax highlighting settings
 - `buildFuture = false` - future-dated posts are not published

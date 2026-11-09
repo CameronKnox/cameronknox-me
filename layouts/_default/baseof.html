@@ -17,11 +17,10 @@
 
     <!-- Analog Clock Script (deferred so it never blocks first paint) -->
     <script src="/js/analog-clock.js" defer></script>
+    <!-- Without JS the clock and date cannot be set, so hide them rather than show an empty face -->
+    <noscript><style>.topbar-clock, .hero-clock, .hero-date { display: none; }</style></noscript>
 
     <link rel="canonical" href="{{ .Permalink }}">
-    {{ with .Site.Home.OutputFormats.Get "rss" }}
-    <link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ $.Site.Title }}">
-    {{ end }}
 
     {{ if .Description }}
     <meta name="description" content="{{ .Description }}">
@@ -56,10 +55,9 @@
     {{ else if .Site.Params.description }}
     <meta name="twitter:description" content="{{ .Site.Params.description }}">
     {{ end }}
-
-    {{ block "head" . }}{{ end }}
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="topbar">
         <div class="topbar-inner">
             <a href="/" class="topbar-brand">
@@ -78,11 +76,16 @@
         </div>
     </header>
 
-    <main class="content{{ if .IsPage }} content-narrow{{ end }}">
+    <main id="main" class="content{{ if .IsPage }} content-narrow{{ end }}">
         {{ block "main" . }}{{ end }}
     </main>
 
     <footer class="site-footer">
+        <nav class="footer-links" aria-label="Contact">
+            <a href="https://github.com/CameronKnox" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/cameron-knox13/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="mailto:cbknox13@gmail.com">Email</a>
+        </nav>
         <p>© {{ now.Year }} {{ .Site.Copyright }}</p>
     </footer>
 </body>

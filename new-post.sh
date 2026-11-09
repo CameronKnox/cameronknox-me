@@ -16,7 +16,28 @@ TAGS="${3:-}"
 
 # Convert title to filename (lowercase, replace spaces with underscores, remove special chars)
 FILENAME=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9 ]//g' | tr ' ' '_')
-POST_FILE="content/posts/${FILENAME}.md"
+
+if [ -z "$FILENAME" ]; then
+    echo "Error: title must contain at least one letter or number"
+    exit 1
+fi
+
+# Always write into this repo's content/posts, wherever the script is run from
+POST_FILE="$(cd "$(dirname "$0")" && pwd)/content/posts/${FILENAME}.md"
+
+if [ -e "$POST_FILE" ]; then
+    echo "Error: $POST_FILE already exists"
+    exit 1
+fi
+
+# Escape backslashes and double quotes so the title stays valid YAML
+YAML_TITLE=$(printf '%s' "$TITLE" | sed 's/\\/\\\\/g; s/"/\\"/g')
+
+# "a, b" -> "a", "b" (empty input gives an empty list)
+yaml_list() {
+    [ -z "$1" ] && return
+    printf '%s' "$1" | sed 's/ *, */", "/g; s/^ */"/; s/ *$/"/'
+}
 
 # Get current local date and time with RFC 3339 offset
 CURRENT_DATE=$(date +"%Y-%m-%dT%H:%M:%S%z")
@@ -25,11 +46,11 @@ CURRENT_DATE="${CURRENT_DATE:0:${#CURRENT_DATE}-2}:${CURRENT_DATE: -2}"
 # Create the post file with professional formatting
 cat > "$POST_FILE" << EOF
 ---
-title: "$TITLE"
+title: "$YAML_TITLE"
 date: $CURRENT_DATE
 description: ""
-tags: [$(echo "$TAGS" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/' | sed 's/""//g')]
-categories: [$(echo "$CATEGORIES" | sed 's/,/", "/g' | sed 's/^/"/; s/$/"/')]
+tags: [$(yaml_list "$TAGS")]
+categories: [$(yaml_list "$CATEGORIES")]
 draft: true
 ---
 

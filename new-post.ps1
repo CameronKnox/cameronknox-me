@@ -8,15 +8,23 @@ param(
     [string]$Tags = ""
 )
 
-if (-not $Title) {
-    Write-Host "Usage: .\new-post.ps1 'Post Title' 'categories' 'tags'"
-    Write-Host "Example: .\new-post.ps1 'My New Post' 'blog,tech' 'programming,web,tutorial'"
+# Convert title to filename
+$Filename = $Title.ToLower() -replace '[^a-z0-9\s]', '' -replace '\s+', '_'
+if (-not $Filename) {
+    Write-Host "Error: title must contain at least one letter or number"
     exit 1
 }
 
-# Convert title to filename
-$Filename = $Title.ToLower() -replace '[^a-z0-9\s]', '' -replace '\s+', '_'
-$PostFile = "content\posts\$Filename.md"
+# Always write into this repo's content\posts, wherever the script is run from
+$PostFile = Join-Path $PSScriptRoot "content\posts\$Filename.md"
+
+if (Test-Path $PostFile) {
+    Write-Host "Error: $PostFile already exists"
+    exit 1
+}
+
+# Escape backslashes and double quotes so the title stays valid YAML
+$YamlTitle = $Title.Replace('\', '\\').Replace('"', '\"')
 
 # Get current local date and time with RFC 3339 offset
 $CurrentDate = Get-Date -Format "yyyy-MM-ddTHH:mm:sszzz"
@@ -33,7 +41,7 @@ $CategoriesFormatted = ($Categories -split ',' | ForEach-Object { "`"$($_.Trim()
 # Create the post content with professional formatting
 $PostContent = @"
 ---
-title: "$Title"
+title: "$YamlTitle"
 date: $CurrentDate
 description: ""
 tags: [$TagsFormatted]

@@ -25,12 +25,16 @@ set "FILENAME=%FILENAME:?=%"
 set "FILENAME=%FILENAME:'=%"
 set "FILENAME=%FILENAME:"=%"
 
-REM Convert to lowercase (simple approach)
+REM Convert to lowercase (cmd substitution matches case-insensitively)
 for %%i in (a b c d e f g h i j k l m n o p q r s t u v w x y z) do call set "FILENAME=%%FILENAME:%%i=%%i%%"
-for %%i in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do call set "FILENAME=%%FILENAME:%%i=%%i%%"
-call :toLower FILENAME
 
-set "POST_FILE=content\posts\%FILENAME%.md"
+REM Always write into this repo's content\posts, wherever the script is run from
+set "POST_FILE=%~dp0content\posts\%FILENAME%.md"
+
+if exist "%POST_FILE%" (
+    echo Error: %POST_FILE% already exists
+    exit /b 1
+)
 
 REM Get current local date and time with RFC 3339 offset
 for /f "usebackq delims=" %%a in (`powershell -NoProfile -Command "Get-Date -Format 'yyyy-MM-ddTHH:mm:sszzz'"`) do set "CURRENT_DATE=%%a"
@@ -41,8 +45,8 @@ echo ---
 echo title: "%TITLE%"
 echo date: %CURRENT_DATE%
 echo description: ""
-echo tags: [%TAGS:"="%]
-echo categories: [%CATEGORIES:"="%]
+echo tags: [%TAGS%]
+echo categories: [%CATEGORIES%]
 echo draft: true
 echo ---
 echo.
@@ -101,9 +105,3 @@ echo 1. Edit the post: code %POST_FILE%
 echo 2. Add a description in the frontmatter, and set draft: false when it is ready to publish
 echo 3. Preview (drafts included): hugo server -D
 echo 4. Build for production: hugo
-
-goto :eof
-
-:toLower
-for %%L in (A B C D E F G H I J K L M N O P Q R S T U V W X Y Z) do set "%~1=!%~1:%%L=%%L!"
-goto :eof
